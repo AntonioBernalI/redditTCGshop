@@ -681,10 +681,10 @@ const ContentScreen = ({ activeItem }) => {
     
     const cardData = {
         'snoo-champion': {
-            name: 'Snoo Champion',
+            name: 'Ghost Snoo',
             image: ghostsnooCard,
-            price: '$5.99',
-            description: 'A legendary card featuring Reddit\'s beloved mascot with incredible power! This rare card can turn the tide of any battle with its unique abilities.',
+            price: '$4.99',
+            description: 'A mysterious spectral version of Reddit\'s beloved mascot. This ghostly Snoo haunts the digital realm with ethereal powers, striking with supernatural precision despite its fragile form.',
             stats: {
                 'Attack': '160',
                 'HP': '1',
@@ -692,10 +692,10 @@ const ContentScreen = ({ activeItem }) => {
             }
         },
         'upvote-storm': {
-            name: 'Upvote Storm',
+            name: 'Spez',
             image: spezCard,
-            price: '$3.99',
-            description: 'Unleash a powerful spell that boosts all your cards on the field! This magical card creates a storm of upvotes that enhances your entire deck.',
+            price: '$6.99',
+            description: 'The legendary CEO and co-founder of Reddit himself! Steve "Spez" Huffman brings balanced leadership to the battlefield with steady damage and reliable health stats.',
             stats: {
                 'Damage': '70',
                 'HP': '70',
@@ -741,7 +741,7 @@ const ContentScreen = ({ activeItem }) => {
                                 <CardImage>
                                     <img 
                                         src={ghostsnooCard} 
-                                        alt="Snoo Champion"
+                                        alt="Ghost Snoo"
                                         style={{
                                             width: '100%',
                                             height: '100%',
@@ -761,7 +761,7 @@ const ContentScreen = ({ activeItem }) => {
                                 <CardImage>
                                     <img 
                                         src={spezCard} 
-                                        alt="Upvote Storm"
+                                        alt="Spez"
                                         style={{
                                             width: '100%',
                                             height: '100%',
