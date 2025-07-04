@@ -759,7 +759,7 @@ const ContentScreen = ({ activeItem }) => {
             description: 'An automated Reddit bot that tirelessly works across the platform. This mechanical entity processes information at lightning speed and executes tasks with unwavering precision.',
             stats: {
                 'Attack': '20',
-                'HP': '55',
+                'HP': '70',
                 'Rarity': '▲ Uncommon'
             }
         },
