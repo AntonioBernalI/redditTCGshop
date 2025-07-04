@@ -149,15 +149,17 @@ const FeaturedContent = styled.div`
 
 const CardSlotsContainer = styled.div`
     display: flex;
-    gap: 30px;
+    gap: 20px;
     width: 100%;
-    max-width: 800px;
+    max-width: 400px;
     justify-content: center;
+    align-items: center;
     
     @media (max-width: 799px) {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
         align-items: center;
+        max-width: 200px;
     }
 `
 
@@ -165,12 +167,13 @@ const CardSlot = styled.div`
     background: linear-gradient(145deg, #ff5801, #ff4500);
     border: 4px solid #ff4500;
     border-radius: 20px;
-    padding: 20px;
-    width: 200px;
-    height: 260px;
+    padding: 15px;
+    width: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
     box-shadow: 
         0 6px 12px rgba(0, 0, 0, 0.4),
@@ -201,22 +204,22 @@ const CardSlot = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 180px;
-        height: 220px;
-        padding: 15px;
+        width: 130px;
+        height: 170px;
+        padding: 12px;
     }
 `
 
 const CardImage = styled.div`
-    width: 130px;
-    height: 160px;
+    width: 90px;
+    height: 110px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     position: relative;
     box-shadow: 
         0 4px 8px rgba(0, 0, 0, 0.3),
@@ -238,19 +241,19 @@ const CardImage = styled.div`
     span {
         color: white;
         font-family: 'Overpass', sans-serif;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
     
     @media (max-width: 799px) {
-        width: 110px;
-        height: 130px;
-        margin-bottom: 12px;
+        width: 75px;
+        height: 90px;
+        margin-bottom: 8px;
         
         span {
-            font-size: 14px;
+            font-size: 10px;
         }
     }
 `
@@ -262,28 +265,28 @@ const CardDescription = styled.div`
     z-index: 1;
     
     h3 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
-        margin: 0 0 8px 0;
+        margin: 0 0 5px 0;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
         letter-spacing: 1px;
         
         @media (max-width: 799px) {
-            font-size: 14px;
-            margin: 0 0 6px 0;
+            font-size: 12px;
+            margin: 0 0 4px 0;
         }
     }
     
     p {
-        font-size: 12px;
+        font-size: 10px;
         margin: 0;
         line-height: 1.3;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         opacity: 0.9;
         
         @media (max-width: 799px) {
-            font-size: 10px;
+            font-size: 9px;
         }
     }
 `
