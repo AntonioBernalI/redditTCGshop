@@ -2,6 +2,9 @@ import { styled } from 'styled-components'
 import { useState } from 'react'
 import spezCard from '../assets/spez.png'
 import ghostsnooCard from '../assets/ghostsnoo.png'
+import botCard from '../assets/bot.png'
+import bloodyprizeCard from '../assets/bloodyprize.png'
+import everythingCard from '../assets/everything.png'
 
 const ContentContainer = styled.div`
     width: 98%;
@@ -704,6 +707,7 @@ const ContentScreen = ({ activeItem }) => {
         },
         'karma-farmer': {
             name: 'Karma Farmer',
+            image: botCard,
             price: '$2.99',
             description: 'A dedicated Redditor who has mastered the art of accumulating karma through quality posts and comments. This card provides steady, reliable performance.',
             stats: {
@@ -714,6 +718,7 @@ const ContentScreen = ({ activeItem }) => {
         },
         'mod-power': {
             name: 'Moderator',
+            image: bloodyprizeCard,
             price: '$5.49',
             description: 'A powerful moderator with the ability to control the battlefield. This card can enforce rules and maintain order with authority.',
             stats: {
@@ -724,6 +729,7 @@ const ContentScreen = ({ activeItem }) => {
         },
         'lurker': {
             name: 'The Lurker',
+            image: everythingCard,
             price: '$1.99',
             description: 'A mysterious figure who watches from the shadows, rarely posting but always observing. This card has defensive capabilities and stealth.',
             stats: {
