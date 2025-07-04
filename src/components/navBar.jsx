@@ -23,8 +23,9 @@ const Nav = styled.div`
         left: 10%;
         right: 10%;
         height: 30%;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.15);
         border-radius: 20px;
+        opacity: 0.7;
     }
     
     /* Playful dots pattern */
