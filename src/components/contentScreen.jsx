@@ -113,7 +113,7 @@ const ContentContainer = styled.div`
     }
     
     @media (max-width: 799px) {
-        height: 78%;
+        height: 73%;
         
         /* Mobile scrollbar styling */
         &::-webkit-scrollbar {
