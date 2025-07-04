@@ -9,7 +9,7 @@ const MainDiv = styled.div`
         height: 90%;
     }
     width: 70%;
-    height: 70%;
+    height: 75%;
     background-color: rgba(18, 103, 154, 0.77);
 `
 export default MainDiv
