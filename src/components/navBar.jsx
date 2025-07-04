@@ -51,8 +51,8 @@ const Nav = styled.div`
 `
 
 const NavItem = styled.div`
-    background: linear-gradient(145deg, #ff6b1a, #ff4500);
-    border: 2px solid #ff3300;
+    background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
+    border: 2px solid rgba(18, 103, 154, 1);
     border-radius: 20px;
     padding: 8px 16px;
     color: white;
@@ -88,7 +88,7 @@ const NavItem = styled.div`
         box-shadow: 
             0 5px 10px rgba(0, 0, 0, 0.4),
             inset 0 2px 4px rgba(255, 255, 255, 0.5);
-        background: linear-gradient(145deg, #ff7b2a, #ff5500);
+        background: linear-gradient(145deg, rgba(18, 103, 154, 1), rgba(15, 85, 130, 1));
     }
     
     &:active {
