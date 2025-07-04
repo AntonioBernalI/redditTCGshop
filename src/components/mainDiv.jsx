@@ -1,6 +1,7 @@
 import {styled} from 'styled-components'
 import {createRoot} from "react-dom/client";
 const MainDiv = styled.div`
+    position: relative;
     border-radius: 5px;
     border: 5px solid #ff5801;
     @media (max-width: 710px) {
