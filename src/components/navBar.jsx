@@ -61,7 +61,7 @@ const NavItem = styled.div`
     padding: 16px 20px;
     color: white;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 25px;
     font-family: 'Overpass', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
