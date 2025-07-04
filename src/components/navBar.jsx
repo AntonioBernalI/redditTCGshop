@@ -2,7 +2,7 @@ import {styled} from 'styled-components'
 
 const Nav = styled.div`
     margin-top: 1%;
-    width: 96%;
+    width: 98%;
     height: 12%;
     background: #ff5801;
     border-radius: 25px;
