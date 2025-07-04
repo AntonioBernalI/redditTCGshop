@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 const ContentContainer = styled.div`
-    width: 99%;
+    width: 98%;
     height: 58%;
     margin-top: 2%;
     background: rgba(18, 103, 154, 0.9);
