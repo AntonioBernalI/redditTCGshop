@@ -701,6 +701,36 @@ const ContentScreen = ({ activeItem }) => {
                 'HP': '70',
                 'Rarity': '★ Rare'
             }
+        },
+        'karma-farmer': {
+            name: 'Karma Farmer',
+            price: '$2.99',
+            description: 'A dedicated Redditor who has mastered the art of accumulating karma through quality posts and comments. This card provides steady, reliable performance.',
+            stats: {
+                'Damage': '45',
+                'HP': '55',
+                'Rarity': '★ Rare'
+            }
+        },
+        'mod-power': {
+            name: 'Moderator',
+            price: '$5.49',
+            description: 'A powerful moderator with the ability to control the battlefield. This card can enforce rules and maintain order with authority.',
+            stats: {
+                'Damage': '60',
+                'HP': '80',
+                'Rarity': '★ Rare'
+            }
+        },
+        'lurker': {
+            name: 'The Lurker',
+            price: '$1.99',
+            description: 'A mysterious figure who watches from the shadows, rarely posting but always observing. This card has defensive capabilities and stealth.',
+            stats: {
+                'Damage': '30',
+                'HP': '90',
+                'Rarity': '★ Rare'
+            }
         }
     };
     
@@ -791,6 +821,89 @@ const ContentScreen = ({ activeItem }) => {
                                         borderRadius: '16px'
                                     }}
                                 />
+                            </ModalCardImage>
+                            <ModalCardDetails>
+                                <h2>{cardData[selectedCard].name}</h2>
+                                <div className="price">{cardData[selectedCard].price}</div>
+                                <div className="description">{cardData[selectedCard].description}</div>
+                                <div className="stats">
+                                    <h3>Card Stats</h3>
+                                    {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
+                                        <div key={key} className="stat-row">
+                                            <span className="stat-label">{key}:</span>
+                                            <span className="stat-value">{value}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <ModalBuyButton>Purchase Card</ModalBuyButton>
+                            </ModalCardDetails>
+                        </ModalContent>
+                    </ModalBackdrop>
+                )}
+            </ContentContainer>
+        );
+    }
+    
+    if (activeItem === 'Cards') {
+        return (
+            <ContentContainer>
+                <FeaturedContent>
+                    <CardSlotsContainer style={{ maxWidth: '700px', gap: '20px' }}>
+                        <CardSlot onClick={() => handleCardClick('karma-farmer')}>
+                            <PriceTag>
+                                <span>$2.99</span>
+                            </PriceTag>
+                            <CardContent>
+                                <CardImage>
+                                    <span>Card Image</span>
+                                </CardImage>
+                            </CardContent>
+                            <BuyButton>Buy Now</BuyButton>
+                        </CardSlot>
+                        <CardSlot onClick={() => handleCardClick('mod-power')}>
+                            <PriceTag>
+                                <span>$5.49</span>
+                            </PriceTag>
+                            <CardContent>
+                                <CardImage>
+                                    <span>Card Image</span>
+                                </CardImage>
+                            </CardContent>
+                            <BuyButton>Buy Now</BuyButton>
+                        </CardSlot>
+                        <CardSlot onClick={() => handleCardClick('lurker')}>
+                            <PriceTag>
+                                <span>$1.99</span>
+                            </PriceTag>
+                            <CardContent>
+                                <CardImage>
+                                    <span>Card Image</span>
+                                </CardImage>
+                            </CardContent>
+                            <BuyButton>Buy Now</BuyButton>
+                        </CardSlot>
+                    </CardSlotsContainer>
+                </FeaturedContent>
+                
+                {selectedCard && (
+                    <ModalBackdrop onClick={handleCloseModal}>
+                        <ModalContent onClick={(e) => e.stopPropagation()}>
+                            <CloseButton onClick={handleCloseModal}>×</CloseButton>
+                            <ModalCardImage>
+                                {cardData[selectedCard].image ? (
+                                    <img 
+                                        src={cardData[selectedCard].image} 
+                                        alt={cardData[selectedCard].name}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            borderRadius: '16px'
+                                        }}
+                                    />
+                                ) : (
+                                    <span>Card Image</span>
+                                )}
                             </ModalCardImage>
                             <ModalCardDetails>
                                 <h2>{cardData[selectedCard].name}</h2>
