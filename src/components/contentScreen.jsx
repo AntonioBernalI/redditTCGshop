@@ -124,42 +124,25 @@ const FeaturedContent = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     z-index: 1;
-    
-    h2 {
-        color: white;
-        font-family: 'Overpass', sans-serif;
-        font-size: 32px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        margin: 0 0 30px 0;
-        
-        @media (max-width: 799px) {
-            font-size: 24px;
-            margin: 0 0 20px 0;
-        }
-    }
 `
 
 const CardSlotsContainer = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     justify-content: center;
     align-items: center;
     
     @media (max-width: 799px) {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         align-items: center;
-        max-width: 200px;
+        max-width: 180px;
     }
 `
 
@@ -167,9 +150,9 @@ const CardSlot = styled.div`
     background: linear-gradient(145deg, #ff5801, #ff4500);
     border: 4px solid #ff4500;
     border-radius: 20px;
-    padding: 15px;
-    width: 150px;
-    height: 200px;
+    padding: 12px;
+    width: 130px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,22 +187,22 @@ const CardSlot = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 130px;
-        height: 170px;
-        padding: 12px;
+        width: 110px;
+        height: 145px;
+        padding: 10px;
     }
 `
 
 const CardImage = styled.div`
-    width: 90px;
-    height: 110px;
+    width: 80px;
+    height: 95px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     position: relative;
     box-shadow: 
         0 4px 8px rgba(0, 0, 0, 0.3),
@@ -241,19 +224,19 @@ const CardImage = styled.div`
     span {
         color: white;
         font-family: 'Overpass', sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
     
     @media (max-width: 799px) {
-        width: 75px;
-        height: 90px;
-        margin-bottom: 8px;
+        width: 65px;
+        height: 75px;
+        margin-bottom: 6px;
         
         span {
-            font-size: 10px;
+            font-size: 9px;
         }
     }
 `
@@ -265,28 +248,28 @@ const CardDescription = styled.div`
     z-index: 1;
     
     h3 {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: bold;
-        margin: 0 0 5px 0;
+        margin: 0 0 4px 0;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
         letter-spacing: 1px;
         
         @media (max-width: 799px) {
-            font-size: 12px;
-            margin: 0 0 4px 0;
+            font-size: 11px;
+            margin: 0 0 3px 0;
         }
     }
     
     p {
-        font-size: 10px;
+        font-size: 9px;
         margin: 0;
         line-height: 1.3;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         opacity: 0.9;
         
         @media (max-width: 799px) {
-            font-size: 9px;
+            font-size: 8px;
         }
     }
 `
@@ -311,7 +294,6 @@ const CardDescription = styled.div`
         return (
             <ContentContainer>
                 <FeaturedContent>
-                    <h2>Featured Cards</h2>
                     <CardSlotsContainer>
                         <CardSlot>
                             <CardImage>
