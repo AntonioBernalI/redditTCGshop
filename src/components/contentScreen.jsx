@@ -505,10 +505,12 @@ const CardSlotsContainer = styled.div`
     align-items: center;
     
     @media (max-width: 799px) {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 25px;
         align-items: center;
-        max-width: 220px;
+        max-width: 400px;
+        justify-content: space-around;
     }
 `
 
@@ -556,6 +558,17 @@ const CardSlot = styled.div`
         width: 160px;
         height: 220px;
         padding: 12px;
+        
+        /* First two cards in first row */
+        &:nth-child(1), &:nth-child(2) {
+            flex-basis: calc(50% - 12.5px);
+        }
+        
+        /* Third card in second row, centered */
+        &:nth-child(3) {
+            flex-basis: 160px;
+            margin: 0 auto;
+        }
     }
 `
 
@@ -912,7 +925,16 @@ const ContentScreen = ({ activeItem }) => {
         return (
             <ContentContainer>
                 <FeaturedContent>
-                    <CardSlotsContainer style={{ maxWidth: '700px', gap: '20px' }}>
+                    <CardSlotsContainer style={{ 
+                        maxWidth: '700px', 
+                        gap: '20px',
+                        ...(window.innerWidth <= 799 ? { 
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            maxWidth: '400px',
+                            gap: '25px'
+                        } : {})
+                    }}>
                         <CardSlot onClick={() => handleCardClick('karma-farmer')}>
                             <PriceTag>
                                 <span>$2.99</span>
