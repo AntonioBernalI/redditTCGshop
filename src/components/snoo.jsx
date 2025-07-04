@@ -2,16 +2,25 @@ import {styled} from 'styled-components'
 import snoo from '../assets/snoo.png'
 const SnooDiv = styled.div`
     z-index: 90;
-    height: 300px;
-    width: 300px;
     position: absolute;
     transform: translate(-50%, -50%);
-    @media (max-width: 710px) {
-        left: 15%;
-        bottom: -12%;
+    
+    /* PC styles (800px and above) */
+    @media (min-width: 800px) {
+        height: 200px;
+        width: 200px;
+        bottom: -15%;
+        left: 17%;
     }
-    bottom: -15%;
-    left: 17%;
+    
+    /* Mobile styles (below 800px) */
+    @media (max-width: 799px) {
+        height: 150px;
+        width: 150px;
+        bottom: 5%;
+        left: 10%;
+        transform: none;
+    }
 `
 const Snoo = () => {
     return (
