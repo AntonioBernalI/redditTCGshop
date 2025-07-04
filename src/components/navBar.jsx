@@ -1,7 +1,9 @@
 import {styled} from 'styled-components'
+
 const Nav = styled.div`
     margin-top: 1%;
     width: 100%;
+    height: 12%;
     background: #ff5801;
     border-radius: 25px;
     border: 3px solid #ff4500;
@@ -11,6 +13,10 @@ const Nav = styled.div`
         inset 0 -2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 5%;
     
     /* Add a subtle animation */
     animation: gentle-pulse 3s ease-in-out infinite alternate;
@@ -42,21 +48,68 @@ const Nav = styled.div`
                 inset 0 -3px 6px rgba(0, 0, 0, 0.3);
         }
     }
+`
+
+const NavItem = styled.div`
+    background: linear-gradient(145deg, #ff6b1a, #ff4500);
+    border: 2px solid #ff3300;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
     
-    /* Desktop height */
-    @media (min-width: 800px) {
-        height: 12%;
+    /* Cartoon highlight */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        right: 4px;
+        height: 40%;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        opacity: 0.8;
     }
     
-    /* Mobile height - smaller for better proportions */
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 5px 10px rgba(0, 0, 0, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.5);
+        background: linear-gradient(145deg, #ff7b2a, #ff5500);
+    }
+    
+    &:active {
+        transform: translateY(0px);
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+    
     @media (max-width: 799px) {
-        height: 8%;
+        font-size: 12px;
+        padding: 6px 12px;
+        letter-spacing: 0.5px;
     }
 `
+
 const NavBar = ({}) => {
     return (
         <>
-            <Nav/>
+            <Nav>
+                <NavItem>Featured</NavItem>
+                <NavItem>Cards</NavItem>
+                <NavItem>Packs</NavItem>
+            </Nav>
         </>
     )
 }
