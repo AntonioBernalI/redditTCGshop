@@ -533,6 +533,18 @@ const FeaturedContent = styled.div`
     z-index: 1;
 `
 
+const InnerContainer = styled.div`
+    width: 100%;
+    height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @media (max-width: 799px) {
+        height: 150%;
+    }
+`
+
 const CardSlotsContainer = styled.div`
     display: flex;
     gap: 30px;
@@ -868,48 +880,50 @@ const ContentScreen = ({ activeItem }) => {
         return (
             <ContentContainer>
                 <FeaturedContent>
-                    <CardSlotsContainer>
-                        <CardSlot onClick={() => handleCardClick('snoo-champion')}>
-                            <PriceTag>
-                                <span>$5.99</span>
-                            </PriceTag>
-                            <CardContent>
-                                <CardImage>
-                                    <img 
-                                        src={ghostsnooCard} 
-                                        alt="Ghost Snoo"
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            borderRadius: '12px'
-                                        }}
-                                    />
-                                </CardImage>
-                            </CardContent>
-                            <BuyButton>Buy Now</BuyButton>
-                        </CardSlot>
-                        <CardSlot onClick={() => handleCardClick('upvote-storm')}>
-                            <PriceTag>
-                                <span>$3.99</span>
-                            </PriceTag>
-                            <CardContent>
-                                <CardImage>
-                                    <img 
-                                        src={spezCard} 
-                                        alt="Spez"
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            borderRadius: '12px'
-                                        }}
-                                    />
-                                </CardImage>
-                            </CardContent>
-                            <BuyButton>Buy Now</BuyButton>
-                        </CardSlot>
-                    </CardSlotsContainer>
+                    <InnerContainer>
+                        <CardSlotsContainer>
+                            <CardSlot onClick={() => handleCardClick('snoo-champion')}>
+                                <PriceTag>
+                                    <span>$5.99</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={ghostsnooCard} 
+                                            alt="Ghost Snoo"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                            <CardSlot onClick={() => handleCardClick('upvote-storm')}>
+                                <PriceTag>
+                                    <span>$3.99</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={spezCard} 
+                                            alt="Spez"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                        </CardSlotsContainer>
+                    </InnerContainer>
                 </FeaturedContent>
                 
                 {selectedCard && (
@@ -962,79 +976,81 @@ const ContentScreen = ({ activeItem }) => {
         return (
             <ContentContainer>
                 <FeaturedContent>
-                    <CardSlotsContainer style={{ 
-                        maxWidth: '700px', 
-                        gap: '20px',
-                        ...(window.innerWidth <= 799 ? { 
-                            flexDirection: 'row',
-                            flexWrap: 'wrap',
-                            maxWidth: '400px',
-                            gap: '25px'
-                        } : {})
-                    }}>
-                        <CardSlot onClick={() => handleCardClick('karma-farmer')}>
-                            <PriceTag>
-                                <span>$2.99</span>
-                            </PriceTag>
-                            <CardContent>
-                                <CardImage>
-                                    <img 
-                                        src={botCard} 
-                                        alt="Bot"
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            borderRadius: '12px'
-                                        }}
-                                    />
-                                </CardImage>
-                            </CardContent>
-                            <BuyButton>Buy Now</BuyButton>
-                        </CardSlot>
-                        <CardSlot onClick={() => handleCardClick('mod-power')}>
-                            <PriceTag>
-                                <span>$5.49</span>
-                            </PriceTag>
-                            <CardContent>
-                                <CardImage>
-                                    <img 
-                                        src={bloodyprizeCard} 
-                                        alt="Bloody Prize"
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            borderRadius: '12px',
-                                            transform: 'rotate(90deg)'
-                                        }}
-                                    />
-                                </CardImage>
-                            </CardContent>
-                            <BuyButton>Buy Now</BuyButton>
-                        </CardSlot>
-                        <CardSlot onClick={() => handleCardClick('lurker')}>
-                            <PriceTag>
-                                <span>$1.99</span>
-                            </PriceTag>
-                            <CardContent>
-                                <CardImage>
-                                    <img 
-                                        src={everythingCard} 
-                                        alt="Everything"
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'contain',
-                                            borderRadius: '12px',
-                                            transform: 'rotate(90deg)'
-                                        }}
-                                    />
-                                </CardImage>
-                            </CardContent>
-                            <BuyButton>Buy Now</BuyButton>
-                        </CardSlot>
-                    </CardSlotsContainer>
+                    <InnerContainer>
+                        <CardSlotsContainer style={{ 
+                            maxWidth: '700px', 
+                            gap: '20px',
+                            ...(window.innerWidth <= 799 ? { 
+                                flexDirection: 'row',
+                                flexWrap: 'wrap',
+                                maxWidth: '400px',
+                                gap: '25px'
+                            } : {})
+                        }}>
+                            <CardSlot onClick={() => handleCardClick('karma-farmer')}>
+                                <PriceTag>
+                                    <span>$2.99</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={botCard} 
+                                            alt="Bot"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                            <CardSlot onClick={() => handleCardClick('mod-power')}>
+                                <PriceTag>
+                                    <span>$5.49</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={bloodyprizeCard} 
+                                            alt="Bloody Prize"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px',
+                                                transform: 'rotate(90deg)'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                            <CardSlot onClick={() => handleCardClick('lurker')}>
+                                <PriceTag>
+                                    <span>$1.99</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={everythingCard} 
+                                            alt="Everything"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px',
+                                                transform: 'rotate(90deg)'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                        </CardSlotsContainer>
+                    </InnerContainer>
                 </FeaturedContent>
                 
                 {selectedCard && (
