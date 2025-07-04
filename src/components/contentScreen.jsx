@@ -885,9 +885,9 @@ const ContentScreen = ({ activeItem }) => {
                                         src={bloodyprizeCard} 
                                         alt="Moderator"
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
                                             borderRadius: '12px',
                                             transform: 'rotate(90deg)'
                                         }}
@@ -906,10 +906,11 @@ const ContentScreen = ({ activeItem }) => {
                                         src={everythingCard} 
                                         alt="The Lurker"
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
-                                            borderRadius: '12px'
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                            borderRadius: '12px',
+                                            transform: 'rotate(90deg)'
                                         }}
                                     />
                                 </CardImage>
@@ -929,10 +930,11 @@ const ContentScreen = ({ activeItem }) => {
                                         src={cardData[selectedCard].image} 
                                         alt={cardData[selectedCard].name}
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
-                                            borderRadius: '16px'
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                            borderRadius: '16px',
+                                            ...(selectedCard === 'mod-power' || selectedCard === 'lurker' ? { transform: 'rotate(90deg)' } : {})
                                         }}
                                     />
                                 ) : (
