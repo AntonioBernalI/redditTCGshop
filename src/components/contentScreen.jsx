@@ -557,8 +557,8 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.div`
-    width: 160px;
-    height: 200px;
+    width: 128px;
+    height: 160px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
@@ -594,8 +594,8 @@ const CardImage = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 130px;
-        height: 160px;
+        width: 104px;
+        height: 128px;
         margin-bottom: 10px;
         
         span {
