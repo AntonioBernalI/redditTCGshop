@@ -239,15 +239,15 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.div`
-    width: 140px;
-    height: 160px;
+    width: 160px;
+    height: 200px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     position: relative;
     box-shadow: 
         0 4px 8px rgba(0, 0, 0, 0.3),
@@ -269,52 +269,19 @@ const CardImage = styled.div`
     span {
         color: white;
         font-family: 'Overpass', sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
     
     @media (max-width: 799px) {
-        width: 110px;
-        height: 130px;
-        margin-bottom: 6px;
+        width: 130px;
+        height: 160px;
+        margin-bottom: 10px;
         
         span {
-            font-size: 12px;
-        }
-    }
-`
-
-const CardDescription = styled.div`
-    color: white;
-    font-family: 'Overpass', sans-serif;
-    text-align: center;
-    z-index: 1;
-    
-    h3 {
-        font-size: 14px;
-        font-weight: bold;
-        margin: 0 0 4px 0;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        
-        @media (max-width: 799px) {
-            font-size: 11px;
-            margin: 0 0 3px 0;
-        }
-    }
-    
-    p {
-        font-size: 10px;
-        margin: 0;
-        line-height: 1.3;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        opacity: 0.9;
-        
-        @media (max-width: 799px) {
-            font-size: 8px;
+            font-size: 14px;
         }
     }
 `
@@ -402,10 +369,6 @@ const BuyButton = styled.button`
                                 <CardImage>
                                     <span>Card Image</span>
                                 </CardImage>
-                                <CardDescription>
-                                    <h3>Snoo Champion</h3>
-                                    <p>A legendary card featuring Reddit's beloved mascot with incredible power!</p>
-                                </CardDescription>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
                         </CardSlot>
@@ -417,10 +380,6 @@ const BuyButton = styled.button`
                                 <CardImage>
                                     <span>Card Image</span>
                                 </CardImage>
-                                <CardDescription>
-                                    <h3>Upvote Storm</h3>
-                                    <p>Unleash a powerful spell that boosts all your cards on the field!</p>
-                                </CardDescription>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
                         </CardSlot>
