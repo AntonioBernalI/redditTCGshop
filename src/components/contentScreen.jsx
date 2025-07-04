@@ -67,6 +67,9 @@ const ContentContainer = styled.div`
     position: relative;
     overflow: hidden;
     overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     /* Custom scrollbar styling */
     &::-webkit-scrollbar {
