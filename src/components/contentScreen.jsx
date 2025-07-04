@@ -861,7 +861,16 @@ const ContentScreen = ({ activeItem }) => {
                             </PriceTag>
                             <CardContent>
                                 <CardImage>
-                                    <span>Card Image</span>
+                                    <img 
+                                        src={botCard} 
+                                        alt="Karma Farmer"
+                                        style={{
+                                            width: '80%',
+                                            height: '80%',
+                                            objectFit: 'cover',
+                                            borderRadius: '12px'
+                                        }}
+                                    />
                                 </CardImage>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
@@ -872,7 +881,17 @@ const ContentScreen = ({ activeItem }) => {
                             </PriceTag>
                             <CardContent>
                                 <CardImage>
-                                    <span>Card Image</span>
+                                    <img 
+                                        src={bloodyprizeCard} 
+                                        alt="Moderator"
+                                        style={{
+                                            width: '80%',
+                                            height: '80%',
+                                            objectFit: 'cover',
+                                            borderRadius: '12px',
+                                            transform: 'rotate(90deg)'
+                                        }}
+                                    />
                                 </CardImage>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
@@ -883,7 +902,16 @@ const ContentScreen = ({ activeItem }) => {
                             </PriceTag>
                             <CardContent>
                                 <CardImage>
-                                    <span>Card Image</span>
+                                    <img 
+                                        src={everythingCard} 
+                                        alt="The Lurker"
+                                        style={{
+                                            width: '80%',
+                                            height: '80%',
+                                            objectFit: 'cover',
+                                            borderRadius: '12px'
+                                        }}
+                                    />
                                 </CardImage>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
