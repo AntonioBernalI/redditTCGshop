@@ -9,7 +9,7 @@ const SnooDiv = styled.div`
         height: 200px;
         width: 200px;
         left: 8%;
-        bottom: 5%;
+        bottom: 4%;
     }
     
     /* Mobile styles (below 800px) */
