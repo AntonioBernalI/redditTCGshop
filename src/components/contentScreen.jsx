@@ -151,12 +151,12 @@ const CardSlot = styled.div`
     border: 4px solid #ff4500;
     border-radius: 20px;
     padding: 16px;
-    width: 180px;
-    height: 220px;
+    width: 200px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     box-shadow: 
         0 6px 12px rgba(0, 0, 0, 0.4),
@@ -187,22 +187,67 @@ const CardSlot = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 140px;
-        height: 180px;
+        width: 160px;
+        height: 220px;
         padding: 12px;
     }
 `
 
+const PriceTag = styled.div`
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(145deg, #ffd700, #ffb300);
+    border: 3px solid #ff8c00;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    
+    span {
+        color: #8b4513;
+        font-family: 'Overpass', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    }
+    
+    @media (max-width: 799px) {
+        width: 50px;
+        height: 50px;
+        top: -6px;
+        right: -6px;
+        
+        span {
+            font-size: 11px;
+        }
+    }
+`
+
+const CardContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+`
+
 const CardImage = styled.div`
-    width: 120px;
-    height: 140px;
+    width: 110px;
+    height: 130px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     position: relative;
     box-shadow: 
         0 4px 8px rgba(0, 0, 0, 0.3),
@@ -231,12 +276,12 @@ const CardImage = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 90px;
-        height: 105px;
-        margin-bottom: 8px;
+        width: 80px;
+        height: 95px;
+        margin-bottom: 6px;
         
         span {
-            font-size: 11px;
+            font-size: 10px;
         }
     }
 `
@@ -248,29 +293,83 @@ const CardDescription = styled.div`
     z-index: 1;
     
     h3 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
-        margin: 0 0 6px 0;
+        margin: 0 0 4px 0;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
         letter-spacing: 1px;
         
         @media (max-width: 799px) {
-            font-size: 13px;
-            margin: 0 0 4px 0;
+            font-size: 11px;
+            margin: 0 0 3px 0;
         }
     }
     
     p {
-        font-size: 11px;
+        font-size: 10px;
         margin: 0;
         line-height: 1.3;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         opacity: 0.9;
         
         @media (max-width: 799px) {
-            font-size: 9px;
+            font-size: 8px;
         }
+    }
+`
+
+const BuyButton = styled.button`
+    background: linear-gradient(145deg, #32cd32, #228b22);
+    border: 3px solid #228b22;
+    border-radius: 15px;
+    padding: 8px 16px;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    margin-top: 8px;
+    
+    /* Button highlight */
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        right: 4px;
+        height: 40%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+    
+    &:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(145deg, #3cb371, #2e8b57);
+        box-shadow: 
+            0 5px 10px rgba(0, 0, 0, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+    
+    &:active {
+        transform: translateY(0px);
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    }
+    
+    @media (max-width: 799px) {
+        font-size: 11px;
+        padding: 6px 12px;
+        margin-top: 6px;
     }
 `
 
@@ -296,22 +395,34 @@ const CardDescription = styled.div`
                 <FeaturedContent>
                     <CardSlotsContainer>
                         <CardSlot>
-                            <CardImage>
-                                <span>Card Image</span>
-                            </CardImage>
-                            <CardDescription>
-                                <h3>Snoo Champion</h3>
-                                <p>A legendary card featuring Reddit's beloved mascot with incredible power!</p>
-                            </CardDescription>
+                            <PriceTag>
+                                <span>$5.99</span>
+                            </PriceTag>
+                            <CardContent>
+                                <CardImage>
+                                    <span>Card Image</span>
+                                </CardImage>
+                                <CardDescription>
+                                    <h3>Snoo Champion</h3>
+                                    <p>A legendary card featuring Reddit's beloved mascot with incredible power!</p>
+                                </CardDescription>
+                            </CardContent>
+                            <BuyButton>Buy Now</BuyButton>
                         </CardSlot>
                         <CardSlot>
-                            <CardImage>
-                                <span>Card Image</span>
-                            </CardImage>
-                            <CardDescription>
-                                <h3>Upvote Storm</h3>
-                                <p>Unleash a powerful spell that boosts all your cards on the field!</p>
-                            </CardDescription>
+                            <PriceTag>
+                                <span>$3.99</span>
+                            </PriceTag>
+                            <CardContent>
+                                <CardImage>
+                                    <span>Card Image</span>
+                                </CardImage>
+                                <CardDescription>
+                                    <h3>Upvote Storm</h3>
+                                    <p>Unleash a powerful spell that boosts all your cards on the field!</p>
+                                </CardDescription>
+                            </CardContent>
+                            <BuyButton>Buy Now</BuyButton>
                         </CardSlot>
                     </CardSlotsContainer>
                 </FeaturedContent>
