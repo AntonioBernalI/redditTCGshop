@@ -166,8 +166,8 @@ const CardSlot = styled.div`
     border: 4px solid #ff4500;
     border-radius: 20px;
     padding: 20px;
-    width: 280px;
-    height: 350px;
+    width: 200px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,15 +201,15 @@ const CardSlot = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 240px;
-        height: 300px;
+        width: 180px;
+        height: 220px;
         padding: 15px;
     }
 `
 
 const CardImage = styled.div`
-    width: 180px;
-    height: 220px;
+    width: 130px;
+    height: 160px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
@@ -245,8 +245,8 @@ const CardImage = styled.div`
     }
     
     @media (max-width: 799px) {
-        width: 150px;
-        height: 180px;
+        width: 110px;
+        height: 130px;
         margin-bottom: 12px;
         
         span {
@@ -262,7 +262,7 @@ const CardDescription = styled.div`
     z-index: 1;
     
     h3 {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         margin: 0 0 8px 0;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -270,20 +270,20 @@ const CardDescription = styled.div`
         letter-spacing: 1px;
         
         @media (max-width: 799px) {
-            font-size: 16px;
+            font-size: 14px;
             margin: 0 0 6px 0;
         }
     }
     
     p {
-        font-size: 14px;
+        font-size: 12px;
         margin: 0;
         line-height: 1.3;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         opacity: 0.9;
         
         @media (max-width: 799px) {
-            font-size: 12px;
+            font-size: 10px;
         }
     }
 `
