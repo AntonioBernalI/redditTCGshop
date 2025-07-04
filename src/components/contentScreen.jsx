@@ -66,6 +66,38 @@ const ContentContainer = styled.div`
     justify-content: center;
     position: relative;
     overflow: hidden;
+    overflow-y: auto;
+    
+    /* Custom scrollbar styling */
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: rgba(18, 103, 154, 0.3);
+        border-radius: 10px;
+        border: 2px solid rgba(18, 103, 154, 0.5);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(145deg, #ff5801, #ff4500);
+        border-radius: 10px;
+        border: 2px solid #ff4500;
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(145deg, #ff6b2b, #ff5801);
+        box-shadow: 
+            0 3px 6px rgba(0, 0, 0, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.4);
+    }
+    
+    &::-webkit-scrollbar-thumb:active {
+        background: linear-gradient(145deg, #ff4500, #e63900);
+    }
     
     /* Subtle highlight */
     &::before {
@@ -82,6 +114,11 @@ const ContentContainer = styled.div`
     
     @media (max-width: 799px) {
         height: 73%;
+        
+        /* Mobile scrollbar styling */
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
     }
 `
 
