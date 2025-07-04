@@ -20,13 +20,13 @@ const ContentContainer = styled.div`
     &::before {
         content: '';
         position: absolute;
-        top: 8%;
-        left: 8%;
-        right: 8%;
-        height: 12%;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        opacity: 0.4;
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        height: 20%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        opacity: 0.8;
     }
     
     @media (max-width: 799px) {
