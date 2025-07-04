@@ -1,10 +1,55 @@
 import { styled } from 'styled-components'
 import { useState } from 'react'
+import { useEffect } from 'react'
 import spezCard from '../assets/spez.png'
 import ghostsnooCard from '../assets/ghostsnoo.png'
 import botCard from '../assets/bot.png'
 import bloodyprizeCard from '../assets/bloodyprize.png'
 import everythingCard from '../assets/everything.png'
+
+const ToastNotification = styled.div`
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #32cd32, #228b22);
+    border: 3px solid #228b22;
+    border-radius: 15px;
+    padding: 15px 25px;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    z-index: 10000;
+    transform: translateX(${props => props.$show ? '0' : '100%'});
+    opacity: ${props => props.$show ? '1' : '0'};
+    transition: all 0.3s ease;
+    max-width: 300px;
+    
+    /* Toast highlight */
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        right: 6px;
+        height: 40%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+    
+    @media (max-width: 799px) {
+        top: 15px;
+        right: 15px;
+        font-size: 14px;
+        padding: 12px 20px;
+        max-width: 250px;
+    }
+`
 
 const ContentContainer = styled.div`
     width: 98%;
@@ -679,74 +724,10 @@ const BuyButton = styled.button`
     }
 `
 
-const ToastNotification = styled.div`
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(145deg, #32cd32, #228b22);
-    border: 3px solid #228b22;
-    border-radius: 15px;
-    padding: 15px 25px;
-    color: white;
-    font-family: 'Overpass', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.4),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
-    z-index: 2000;
-    animation: slideIn 0.3s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
-    
-    /* Toast highlight */
-    position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        top: 3px;
-        left: 6px;
-        right: 6px;
-        height: 40%;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        opacity: 0.8;
-    }
-    
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-    }
-    
-    @media (max-width: 799px) {
-        top: 15px;
-        right: 15px;
-        font-size: 14px;
-        padding: 12px 20px;
-        letter-spacing: 0.5px;
-    }
-`
-
 const ContentScreen = ({ activeItem }) => {
     const [selectedCard, setSelectedCard] = useState(null);
-    const [toast, setToast] = useState(null);
+    const [toast, setToast] = useState('');
+    const [showToast, setShowToast] = useState(false);
     
     const cardData = {
         'snoo-champion': {
@@ -817,11 +798,13 @@ const ContentScreen = ({ activeItem }) => {
     const handlePurchase = (cardId) => {
         const cardName = cardData[cardId].name;
         setToast(`${cardName} purchased`);
+        setShowToast(true);
         setSelectedCard(null);
         
-        // Auto-hide toast after 3 seconds
+        // Hide toast after 3 seconds
         setTimeout(() => {
-            setToast(null);
+            setShowToast(false);
+            setTimeout(() => setToast(''), 300); // Clear text after animation
         }, 3000);
     };
 
@@ -922,6 +905,12 @@ const ContentScreen = ({ activeItem }) => {
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
+                )}
+                
+                {toast && (
+                    <ToastNotification $show={showToast}>
+                        {toast}
+                    </ToastNotification>
                 )}
             </ContentContainer>
         );
@@ -1036,22 +1025,25 @@ const ContentScreen = ({ activeItem }) => {
                         </ModalContent>
                     </ModalBackdrop>
                 )}
+                
+                {toast && (
+                    <ToastNotification $show={showToast}>
+                        {toast}
+                    </ToastNotification>
+                )}
             </ContentContainer>
         );
     }
     
     return (
-        <>
-            <ContentContainer>
-                <ContentText>{activeItem}</ContentText>
-            </ContentContainer>
-            
+        <ContentContainer>
+            <ContentText>{activeItem}</ContentText>
             {toast && (
-                <ToastNotification>
+                <ToastNotification $show={showToast}>
                     {toast}
                 </ToastNotification>
             )}
-        </>
+        </ContentContainer>
     );
 }
 
