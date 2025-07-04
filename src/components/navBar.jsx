@@ -88,6 +88,15 @@ const NavItem = styled.div`
         opacity: 0.8;
     }
     
+    /* Active state styling */
+    ${props => props.$active && `
+        background: linear-gradient(145deg, rgba(15, 85, 130, 1), rgba(12, 70, 110, 1));
+        transform: translateY(-2px);
+        box-shadow: 
+            0 5px 10px rgba(0, 0, 0, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    `}
+    
     &:hover {
         transform: translateY(-2px);
         box-shadow: 
@@ -111,13 +120,28 @@ const NavItem = styled.div`
     }
 `
 
-const NavBar = ({}) => {
+const NavBar = ({ activeItem, onItemClick }) => {
     return (
         <>
             <Nav>
-                <NavItem>Featured</NavItem>
-                <NavItem>Cards</NavItem>
-                <NavItem>Packs</NavItem>
+                <NavItem 
+                    $active={activeItem === 'Featured'} 
+                    onClick={() => onItemClick('Featured')}
+                >
+                    Featured
+                </NavItem>
+                <NavItem 
+                    $active={activeItem === 'Cards'} 
+                    onClick={() => onItemClick('Cards')}
+                >
+                    Cards
+                </NavItem>
+                <NavItem 
+                    $active={activeItem === 'Packs'} 
+                    onClick={() => onItemClick('Packs')}
+                >
+                    Packs
+                </NavItem>
             </Nav>
         </>
     )
