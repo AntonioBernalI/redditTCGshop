@@ -1,5 +1,7 @@
 import { styled } from 'styled-components'
 import { useState } from 'react'
+import spezCard from '../assets/spez.png'
+import ghostsnooCard from '../assets/ghostsnoo.png'
 
 const ContentContainer = styled.div`
     width: 98%;
@@ -680,6 +682,7 @@ const ContentScreen = ({ activeItem }) => {
     const cardData = {
         'snoo-champion': {
             name: 'Snoo Champion',
+            image: ghostsnooCard,
             price: '$5.99',
             description: 'A legendary card featuring Reddit\'s beloved mascot with incredible power! This rare card can turn the tide of any battle with its unique abilities.',
             stats: {
@@ -691,6 +694,7 @@ const ContentScreen = ({ activeItem }) => {
         },
         'upvote-storm': {
             name: 'Upvote Storm',
+            image: spezCard,
             price: '$3.99',
             description: 'Unleash a powerful spell that boosts all your cards on the field! This magical card creates a storm of upvotes that enhances your entire deck.',
             stats: {
@@ -737,7 +741,16 @@ const ContentScreen = ({ activeItem }) => {
                             </PriceTag>
                             <CardContent>
                                 <CardImage>
-                                    <span>Card Image</span>
+                                    <img 
+                                        src={ghostsnooCard} 
+                                        alt="Snoo Champion"
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            borderRadius: '12px'
+                                        }}
+                                    />
                                 </CardImage>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
@@ -748,7 +761,16 @@ const ContentScreen = ({ activeItem }) => {
                             </PriceTag>
                             <CardContent>
                                 <CardImage>
-                                    <span>Card Image</span>
+                                    <img 
+                                        src={spezCard} 
+                                        alt="Upvote Storm"
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            borderRadius: '12px'
+                                        }}
+                                    />
                                 </CardImage>
                             </CardContent>
                             <BuyButton>Buy Now</BuyButton>
@@ -761,7 +783,16 @@ const ContentScreen = ({ activeItem }) => {
                         <ModalContent onClick={(e) => e.stopPropagation()}>
                             <CloseButton onClick={handleCloseModal}>×</CloseButton>
                             <ModalCardImage>
-                                <span>Card Image</span>
+                                <img 
+                                    src={cardData[selectedCard].image} 
+                                    alt={cardData[selectedCard].name}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        borderRadius: '16px'
+                                    }}
+                                />
                             </ModalCardImage>
                             <ModalCardDetails>
                                 <h2>{cardData[selectedCard].name}</h2>
