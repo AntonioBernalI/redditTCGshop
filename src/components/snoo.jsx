@@ -8,8 +8,8 @@ const SnooDiv = styled.div`
     @media (min-width: 800px) {
         height: 200px;
         width: 200px;
-        left: 10%;
-        bottom: 10%;
+        left: 8%;
+        bottom: 8%;
     }
     
     /* Mobile styles (below 800px) */
