@@ -16,8 +16,8 @@ const SnooDiv = styled.div`
     @media (max-width: 799px) {
         height: 150px;
         width: 150px;
-        left: 1%;
-        bottom: 1%;
+        left: 0%;
+        bottom: 0%;
     }
 `
 const Snoo = () => {
