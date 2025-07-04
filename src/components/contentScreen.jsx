@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import spezCard from '../assets/spez.png'
 import ghostsnooCard from '../assets/ghostsnoo.png'
-import botCard from '../assets/bot.png'
 import bloodyprizeCard from '../assets/bloodyprize.png'
 import everythingCard from '../assets/everything.png'
 
@@ -816,17 +815,6 @@ const ContentScreen = ({ activeItem }) => {
                 'Rarity': '★ Rare'
             }
         },
-        'karma-farmer': {
-            name: 'Bot',
-            image: botCard,
-            price: '$2.99',
-            description: 'An automated Reddit bot that tirelessly works across the platform. This mechanical entity processes information at lightning speed and executes tasks with unwavering precision.',
-            stats: {
-                'Attack': '20',
-                'HP': '70',
-                'Rarity': '▲ Uncommon'
-            }
-        },
         'mod-power': {
             name: 'Bloody Prize',
             image: bloodyprizeCard,
@@ -989,26 +977,6 @@ const ContentScreen = ({ activeItem }) => {
                                 gap: '25px'
                             } : {})
                         }}>
-                            <CardSlot onClick={() => handleCardClick('karma-farmer')}>
-                                <PriceTag>
-                                    <span>$2.99</span>
-                                </PriceTag>
-                                <CardContent>
-                                    <CardImage>
-                                        <img 
-                                            src={botCard} 
-                                            alt="Bot"
-                                            style={{
-                                                width: '100%',
-                                                height: '100%',
-                                                objectFit: 'contain',
-                                                borderRadius: '12px'
-                                            }}
-                                        />
-                                    </CardImage>
-                                </CardContent>
-                                <BuyButton>Buy Now</BuyButton>
-                            </CardSlot>
                             <CardSlot onClick={() => handleCardClick('mod-power')}>
                                 <PriceTag>
                                     <span>$5.49</span>
