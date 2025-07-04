@@ -3,7 +3,7 @@ import {styled} from 'styled-components'
 const Nav = styled.div`
     margin-top: 1%;
     width: 98%;
-    height: 15%;
+    height: 22%;
     background: #ff5801;
     border-radius: 25px;
     border: 3px solid #ff4500;
@@ -47,6 +47,10 @@ const Nav = styled.div`
                 inset 0 3px 6px rgba(255, 255, 255, 0.4),
                 inset 0 -3px 6px rgba(0, 0, 0, 0.3);
         }
+    }
+    
+    @media (max-width: 799px) {
+        height: 15%;
     }
 `
 
