@@ -6,6 +6,18 @@ const Header = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    
+    img {
+        height: 100%;
+        
+        @media (min-width: 800px) {
+            width: 40%;
+        }
+        
+        @media (max-width: 799px) {
+            width: 70%;
+        }
+    }
 `
 function HeaderImage() {
     return(
@@ -15,10 +27,7 @@ function HeaderImage() {
                 height: '2%',
             }}></div>
             <Header>
-                <img src={name} alt="" style={{
-                    width: '60%',
-                    height: '100%',
-                }}/>
+                <img src={name} alt="" />
             </Header>
         </>
     )
