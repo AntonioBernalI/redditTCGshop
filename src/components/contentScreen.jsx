@@ -773,8 +773,8 @@ const ContentScreen = ({ activeItem }) => {
                                         src={ghostsnooCard} 
                                         alt="Ghost Snoo"
                                         style={{
-                                            width: '100%',
-                                            height: '100%',
+                                            width: '80%',
+                                            height: '80%',
                                             objectFit: 'cover',
                                             borderRadius: '12px'
                                         }}
@@ -793,8 +793,8 @@ const ContentScreen = ({ activeItem }) => {
                                         src={spezCard} 
                                         alt="Spez"
                                         style={{
-                                            width: '100%',
-                                            height: '100%',
+                                            width: '80%',
+                                            height: '80%',
                                             objectFit: 'cover',
                                             borderRadius: '12px'
                                         }}
@@ -895,8 +895,8 @@ const ContentScreen = ({ activeItem }) => {
                                         src={cardData[selectedCard].image} 
                                         alt={cardData[selectedCard].name}
                                         style={{
-                                            width: '100%',
-                                            height: '100%',
+                                            width: '80%',
+                                            height: '80%',
                                             objectFit: 'cover',
                                             borderRadius: '16px'
                                         }}
