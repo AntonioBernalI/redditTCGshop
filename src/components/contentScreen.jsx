@@ -142,7 +142,7 @@ const ModalContent = styled.div`
     padding: 30px;
     max-width: 500px;
     width: 90%;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: auto;
     position: relative;
     box-shadow: 
@@ -165,6 +165,7 @@ const ModalContent = styled.div`
     @media (max-width: 799px) {
         padding: 20px;
         max-width: 350px;
+        max-height: 60vh;
     }
 `
 
