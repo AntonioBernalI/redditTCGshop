@@ -1,5 +1,5 @@
 import {styled} from 'styled-components'
-import snoo from '../assets/snoo.png'
+import snoo from '../assets/snooImage.png'
 const SnooDiv = styled.div`
     z-index: 90;
     position: absolute;
