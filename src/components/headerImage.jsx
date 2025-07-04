@@ -6,7 +6,6 @@ const Header = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 0 5%;
     
     img {
         height: 100%;
