@@ -286,6 +286,24 @@ const CardImage = styled.div`
     }
 `
 
+const ClickLabel = styled.div`
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    @media (max-width: 799px) {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+`
+
 const BuyButton = styled.button`
     background: linear-gradient(145deg, #32cd32, #228b22);
     border: 3px solid #228b22;
