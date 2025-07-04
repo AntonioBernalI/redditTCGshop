@@ -15,8 +15,9 @@ const Nav = styled.div`
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 2%;
+    justify-content: space-evenly;
+    padding: 0 1%;
+    gap: 2%;
     
     /* Add a subtle animation */
     animation: gentle-pulse 3s ease-in-out infinite alternate;
@@ -60,6 +61,9 @@ const NavItem = styled.div`
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    flex: 1;
+    max-width: 30%;
+    text-align: center;
     cursor: pointer;
     position: relative;
     box-shadow: 
@@ -97,8 +101,9 @@ const NavItem = styled.div`
     
     @media (max-width: 799px) {
         font-size: 12px;
-        padding: 6px 8px;
+        padding: 6px 4px;
         letter-spacing: 0.5px;
+        max-width: 28%;
     }
 `
 
