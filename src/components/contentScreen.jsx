@@ -239,8 +239,8 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.div`
-    width: 110px;
-    height: 130px;
+    width: 140px;
+    height: 160px;
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 3px solid rgba(18, 103, 154, 1);
     border-radius: 15px;
@@ -269,19 +269,19 @@ const CardImage = styled.div`
     span {
         color: white;
         font-family: 'Overpass', sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
     
     @media (max-width: 799px) {
-        width: 80px;
-        height: 95px;
+        width: 110px;
+        height: 130px;
         margin-bottom: 6px;
         
         span {
-            font-size: 10px;
+            font-size: 12px;
         }
     }
 `
