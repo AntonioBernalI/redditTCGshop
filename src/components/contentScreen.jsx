@@ -679,8 +679,74 @@ const BuyButton = styled.button`
     }
 `
 
+const ToastNotification = styled.div`
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(145deg, #32cd32, #228b22);
+    border: 3px solid #228b22;
+    border-radius: 15px;
+    padding: 15px 25px;
+    color: white;
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    z-index: 2000;
+    animation: slideIn 0.3s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+    
+    /* Toast highlight */
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        right: 6px;
+        height: 40%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+    
+    @media (max-width: 799px) {
+        top: 15px;
+        right: 15px;
+        font-size: 14px;
+        padding: 12px 20px;
+        letter-spacing: 0.5px;
+    }
+`
+
 const ContentScreen = ({ activeItem }) => {
     const [selectedCard, setSelectedCard] = useState(null);
+    const [toast, setToast] = useState(null);
     
     const cardData = {
         'snoo-champion': {
@@ -746,6 +812,17 @@ const ContentScreen = ({ activeItem }) => {
     
     const handleCloseModal = () => {
         setSelectedCard(null);
+    };
+    
+    const handlePurchase = (cardId) => {
+        const cardName = cardData[cardId].name;
+        setToast(`${cardName} purchased`);
+        setSelectedCard(null);
+        
+        // Auto-hide toast after 3 seconds
+        setTimeout(() => {
+            setToast(null);
+        }, 3000);
     };
 
     if (!activeItem) {
@@ -841,7 +918,7 @@ const ContentScreen = ({ activeItem }) => {
                                         </div>
                                     ))}
                                 </div>
-                                <ModalBuyButton>Purchase Card</ModalBuyButton>
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
@@ -954,7 +1031,7 @@ const ContentScreen = ({ activeItem }) => {
                                         </div>
                                     ))}
                                 </div>
-                                <ModalBuyButton>Purchase Card</ModalBuyButton>
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
@@ -964,9 +1041,17 @@ const ContentScreen = ({ activeItem }) => {
     }
     
     return (
-        <ContentContainer>
-            <ContentText>{activeItem}</ContentText>
-        </ContentContainer>
+        <>
+            <ContentContainer>
+                <ContentText>{activeItem}</ContentText>
+            </ContentContainer>
+            
+            {toast && (
+                <ToastNotification>
+                    {toast}
+                </ToastNotification>
+            )}
+        </>
     );
 }
 
