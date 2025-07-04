@@ -753,10 +753,10 @@ const ContentScreen = ({ activeItem }) => {
             }
         },
         'karma-farmer': {
-            name: 'Karma Farmer',
+            name: 'Bot',
             image: botCard,
             price: '$2.99',
-            description: 'A dedicated Redditor who has mastered the art of accumulating karma through quality posts and comments. This card provides steady, reliable performance.',
+            description: 'An automated Reddit bot that tirelessly works across the platform. This mechanical entity processes information at lightning speed and executes tasks with unwavering precision.',
             stats: {
                 'Damage': '45',
                 'HP': '55',
@@ -764,26 +764,16 @@ const ContentScreen = ({ activeItem }) => {
             }
         },
         'mod-power': {
-            name: 'Moderator',
+            name: 'Bloody Prize',
             image: bloodyprizeCard,
             price: '$5.49',
-            description: 'A powerful moderator with the ability to control the battlefield. This card can enforce rules and maintain order with authority.',
-            stats: {
-                'Damage': '60',
-                'HP': '80',
-                'Rarity': '★ Rare'
-            }
+            description: 'A dark and mysterious reward earned through intense Reddit battles. This blood-stained trophy represents the ultimate sacrifice and victory in the most brutal of online conflicts.'
         },
         'lurker': {
-            name: 'The Lurker',
+            name: 'Everything',
             image: everythingCard,
             price: '$1.99',
-            description: 'A mysterious figure who watches from the shadows, rarely posting but always observing. This card has defensive capabilities and stealth.',
-            stats: {
-                'Damage': '30',
-                'HP': '90',
-                'Rarity': '★ Rare'
-            }
+            description: 'The ultimate Reddit experience condensed into a single card. This represents the collective knowledge, memes, discussions, and chaos that encompasses everything Reddit has to offer.'
         }
     };
     
@@ -892,15 +882,17 @@ const ContentScreen = ({ activeItem }) => {
                                 <h2>{cardData[selectedCard].name}</h2>
                                 <div className="price">{cardData[selectedCard].price}</div>
                                 <div className="description">{cardData[selectedCard].description}</div>
-                                <div className="stats">
-                                    <h3>Card Stats</h3>
-                                    {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
-                                        <div key={key} className="stat-row">
-                                            <span className="stat-label">{key}:</span>
-                                            <span className="stat-value">{value}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                                {cardData[selectedCard].stats && (
+                                    <div className="stats">
+                                        <h3>Card Stats</h3>
+                                        {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
+                                            <div key={key} className="stat-row">
+                                                <span className="stat-label">{key}:</span>
+                                                <span className="stat-value">{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                                 <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
@@ -929,7 +921,7 @@ const ContentScreen = ({ activeItem }) => {
                                 <CardImage>
                                     <img 
                                         src={botCard} 
-                                        alt="Karma Farmer"
+                                        alt="Bot"
                                         style={{
                                             width: '100%',
                                             height: '100%',
@@ -949,7 +941,7 @@ const ContentScreen = ({ activeItem }) => {
                                 <CardImage>
                                     <img 
                                         src={bloodyprizeCard} 
-                                        alt="Moderator"
+                                        alt="Bloody Prize"
                                         style={{
                                             width: '100%',
                                             height: '100%',
@@ -970,7 +962,7 @@ const ContentScreen = ({ activeItem }) => {
                                 <CardImage>
                                     <img 
                                         src={everythingCard} 
-                                        alt="The Lurker"
+                                        alt="Everything"
                                         style={{
                                             width: '100%',
                                             height: '100%',
@@ -1011,15 +1003,17 @@ const ContentScreen = ({ activeItem }) => {
                                 <h2>{cardData[selectedCard].name}</h2>
                                 <div className="price">{cardData[selectedCard].price}</div>
                                 <div className="description">{cardData[selectedCard].description}</div>
-                                <div className="stats">
-                                    <h3>Card Stats</h3>
-                                    {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
-                                        <div key={key} className="stat-row">
-                                            <span className="stat-label">{key}:</span>
-                                            <span className="stat-value">{value}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                                {cardData[selectedCard].stats && (
+                                    <div className="stats">
+                                        <h3>Card Stats</h3>
+                                        {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
+                                            <div key={key} className="stat-row">
+                                                <span className="stat-label">{key}:</span>
+                                                <span className="stat-value">{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                                 <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
