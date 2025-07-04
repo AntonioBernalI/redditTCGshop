@@ -3,7 +3,7 @@ import {styled} from 'styled-components'
 const Nav = styled.div`
     margin-top: 1%;
     width: 98%;
-    height: 22%;
+    height: 15%;
     background: #ff5801;
     border-radius: 25px;
     border: 3px solid #ff4500;
