@@ -114,6 +114,8 @@ const ContentContainer = styled.div`
     
     @media (max-width: 799px) {
         height: 73%;
+        align-items: center;
+        justify-content: center;
         
         /* Mobile scrollbar styling */
         &::-webkit-scrollbar {
