@@ -686,10 +686,9 @@ const ContentScreen = ({ activeItem }) => {
             price: '$5.99',
             description: 'A legendary card featuring Reddit\'s beloved mascot with incredible power! This rare card can turn the tide of any battle with its unique abilities.',
             stats: {
-                'Attack': '850',
-                'Defense': '750',
-                'Speed': '600',
-                'Rarity': 'Legendary'
+                'Attack': '160',
+                'HP': '1',
+                'Rarity': '★ Rare'
             }
         },
         'upvote-storm': {
@@ -698,10 +697,9 @@ const ContentScreen = ({ activeItem }) => {
             price: '$3.99',
             description: 'Unleash a powerful spell that boosts all your cards on the field! This magical card creates a storm of upvotes that enhances your entire deck.',
             stats: {
-                'Power': '500',
-                'Duration': '3 Turns',
-                'Effect': 'Boost All',
-                'Rarity': 'Rare'
+                'Damage': '70',
+                'HP': '70',
+                'Rarity': '★ Rare'
             }
         }
     };
