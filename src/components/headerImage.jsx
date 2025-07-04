@@ -6,16 +6,19 @@ const Header = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    padding: 0 5%;
     
     img {
         height: 100%;
+        object-fit: contain;
+        max-width: 100%;
         
         @media (min-width: 800px) {
-            width: 40%;
+            width: 75%;
         }
         
         @media (max-width: 799px) {
-            width: 70%;
+            width: 85%;
         }
     }
 `
