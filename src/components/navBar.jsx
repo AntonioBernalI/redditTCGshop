@@ -2,13 +2,7 @@ import {styled} from 'styled-components'
 const Nav = styled.div`
     margin-top: 1%;
     width: 100%;
-    background: linear-gradient(45deg, 
-        #ff6b35 0%, 
-        #ff8c42 25%, 
-        #ffa726 50%, 
-        #ffb74d 75%, 
-        #ff8c42 100%
-    );
+    background: #ff5801;
     border-radius: 25px;
     border: 3px solid #ff4500;
     box-shadow: 
@@ -29,13 +23,8 @@ const Nav = styled.div`
         left: 10%;
         right: 10%;
         height: 30%;
-        background: linear-gradient(90deg, 
-            rgba(255, 255, 255, 0.4) 0%, 
-            rgba(255, 255, 255, 0.6) 50%, 
-            rgba(255, 255, 255, 0.2) 100%
-        );
+        background: rgba(255, 255, 255, 0.3);
         border-radius: 20px;
-        filter: blur(1px);
     }
     
     /* Playful dots pattern */
