@@ -30,7 +30,7 @@ const ContentContainer = styled.div`
     }
     
     @media (max-width: 799px) {
-        height: 70%;
+        height: 73%;
     }
 `
 
