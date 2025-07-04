@@ -779,9 +779,9 @@ const ContentScreen = ({ activeItem }) => {
                                         src={ghostsnooCard} 
                                         alt="Ghost Snoo"
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
                                             borderRadius: '12px'
                                         }}
                                     />
@@ -799,9 +799,9 @@ const ContentScreen = ({ activeItem }) => {
                                         src={spezCard} 
                                         alt="Spez"
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
                                             borderRadius: '12px'
                                         }}
                                     />
@@ -865,9 +865,9 @@ const ContentScreen = ({ activeItem }) => {
                                         src={botCard} 
                                         alt="Karma Farmer"
                                         style={{
-                                            width: '80%',
-                                            height: '80%',
-                                            objectFit: 'cover',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
                                             borderRadius: '12px'
                                         }}
                                     />
