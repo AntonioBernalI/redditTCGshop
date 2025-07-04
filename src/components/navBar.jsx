@@ -3,7 +3,7 @@ import {styled} from 'styled-components'
 const Nav = styled.div`
     margin-top: 1%;
     width: 98%;
-    height: 12%;
+    height: 16%;
     background: #ff5801;
     border-radius: 25px;
     border: 3px solid #ff4500;
@@ -54,10 +54,10 @@ const NavItem = styled.div`
     background: linear-gradient(145deg, rgba(18, 103, 154, 0.9), rgba(18, 103, 154, 1));
     border: 2px solid rgba(18, 103, 154, 1);
     border-radius: 20px;
-    padding: 8px 16px;
+    padding: 12px 16px;
     color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
     flex: 1;
@@ -99,8 +99,8 @@ const NavItem = styled.div`
     }
     
     @media (max-width: 799px) {
-        font-size: 12px;
-        padding: 6px 4px;
+        font-size: 14px;
+        padding: 10px 4px;
         letter-spacing: 0.5px;
         max-width: 24%;
     }
