@@ -5,6 +5,7 @@ import spezCard from '../assets/spez.png'
 import ghostsnooCard from '../assets/ghostsnoo.png'
 import bloodyprizeCard from '../assets/bloodyprize.png'
 import everythingCard from '../assets/everything.png'
+import sobreCard from '../assets/sobre.png'
 
 const ToastNotification = styled.div`
     position: fixed;
@@ -826,6 +827,12 @@ const ContentScreen = ({ activeItem }) => {
             image: everythingCard,
             price: '$1.99',
             description: 'The ultimate Reddit experience condensed into a single card. This represents the collective knowledge, memes, discussions, and chaos that encompasses everything Reddit has to offer.'
+        },
+        'pack': {
+            name: 'Pack',
+            image: sobreCard,
+            price: '$9.99',
+            description: 'A premium booster pack containing 5 random cards from the Reddit TCG collection. Each pack guarantees at least one rare card and offers the chance to discover powerful legendary cards for your deck.'
         }
     };
     
@@ -1013,6 +1020,90 @@ const ContentScreen = ({ activeItem }) => {
                                                 objectFit: 'contain',
                                                 borderRadius: '12px',
                                                 transform: 'rotate(90deg)'
+                                            }}
+                                        />
+                                    </CardImage>
+                                </CardContent>
+                                <BuyButton>Buy Now</BuyButton>
+                            </CardSlot>
+                        </CardSlotsContainer>
+                    </InnerContainer>
+                </FeaturedContent>
+                
+                {selectedCard && (
+                    <ModalBackdrop onClick={handleCloseModal}>
+                        <ModalContent onClick={(e) => e.stopPropagation()}>
+                            <CloseButton onClick={handleCloseModal}>×</CloseButton>
+                            <ModalCardImage>
+                                {cardData[selectedCard].image ? (
+                                    <img 
+                                        src={cardData[selectedCard].image} 
+                                        alt={cardData[selectedCard].name}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'contain',
+                                            borderRadius: '16px',
+                                            ...(selectedCard === 'mod-power' || selectedCard === 'lurker' ? { transform: 'rotate(90deg)' } : {})
+                                        }}
+                                    />
+                                ) : (
+                                    <span>Card Image</span>
+                                )}
+                            </ModalCardImage>
+                            <ModalCardDetails>
+                                <h2>{cardData[selectedCard].name}</h2>
+                                <div className="price">{cardData[selectedCard].price}</div>
+                                <div className="description">{cardData[selectedCard].description}</div>
+                                {cardData[selectedCard].stats && (
+                                    <div className="stats">
+                                        <h3>Card Stats</h3>
+                                        {Object.entries(cardData[selectedCard].stats).map(([key, value]) => (
+                                            <div key={key} className="stat-row">
+                                                <span className="stat-label">{key}:</span>
+                                                <span className="stat-value">{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
+                            </ModalCardDetails>
+                        </ModalContent>
+                    </ModalBackdrop>
+                )}
+                
+                {toast && (
+                    <ToastNotification $show={showToast}>
+                        {toast}
+                    </ToastNotification>
+                )}
+            </ContentContainer>
+        );
+    }
+    
+    if (activeItem === 'Packs') {
+        return (
+            <ContentContainer>
+                <FeaturedContent>
+                    <InnerContainer>
+                        <CardSlotsContainer style={{ 
+                            maxWidth: '300px',
+                            justifyContent: 'center'
+                        }}>
+                            <CardSlot onClick={() => handleCardClick('pack')}>
+                                <PriceTag>
+                                    <span>$9.99</span>
+                                </PriceTag>
+                                <CardContent>
+                                    <CardImage>
+                                        <img 
+                                            src={sobreCard} 
+                                            alt="Pack"
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'contain',
+                                                borderRadius: '12px'
                                             }}
                                         />
                                     </CardImage>
