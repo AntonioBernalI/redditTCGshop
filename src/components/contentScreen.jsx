@@ -758,9 +758,9 @@ const ContentScreen = ({ activeItem }) => {
             price: '$2.99',
             description: 'An automated Reddit bot that tirelessly works across the platform. This mechanical entity processes information at lightning speed and executes tasks with unwavering precision.',
             stats: {
-                'Damage': '45',
+                'Attack': '20',
                 'HP': '55',
-                'Rarity': '★ Rare'
+                'Rarity': '▲ Uncommon'
             }
         },
         'mod-power': {
