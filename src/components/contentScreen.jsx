@@ -119,7 +119,7 @@ const WelcomeContent = styled.div`
         }
     }
 `
-const ContentScreen = ({ activeItem }) => {
+
 const FeaturedContent = styled.div`
     width: 100%;
     height: 100%;
@@ -358,6 +358,7 @@ const BuyButton = styled.button`
     }
 `
 
+const ContentScreen = ({ activeItem }) => {
     if (!activeItem) {
         return (
             <ContentContainer>
