@@ -28,21 +28,6 @@ const Nav = styled.div`
         opacity: 0.7;
     }
     
-    /* Playful dots pattern */
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
-            radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px),
-            radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-        background-size: 40px 40px, 60px 60px, 30px 30px;
-    }
-    
     @keyframes gentle-pulse {
         0% {
             box-shadow: 
