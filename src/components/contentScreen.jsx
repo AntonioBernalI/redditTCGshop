@@ -52,11 +52,11 @@ const ContentText = styled.h2`
 `
 
 const ContentScreen = ({ activeItem }) => {
-    if (!activeItem) return null;
+    const displayText = activeItem || "Welcome to RedditTCGshop";
     
     return (
         <ContentContainer>
-            <ContentText>{activeItem}</ContentText>
+            <ContentText>{displayText}</ContentText>
         </ContentContainer>
     )
 }
