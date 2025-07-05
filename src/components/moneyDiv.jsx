@@ -43,7 +43,7 @@ const MoneyDiv = styled.div`
 const MoneyLogo = styled.div`
     width: 50px;
     height: 50px;
-    border: 3px solid #228b22;
+    border: 3px solid rgba(34, 139, 34, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
