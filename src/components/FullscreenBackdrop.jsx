@@ -59,60 +59,11 @@ const MessageText = styled.p`
     color: white;
     font-family: 'Overpass', sans-serif;
     font-size: 18px;
-    margin: 0 0 25px 0;
+    margin: 0;
     line-height: 1.5;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     z-index: 1;
     position: relative;
-`
-
-const FullscreenButton = styled.button`
-    background: linear-gradient(145deg, #ff5801, #ff4500);
-    border: 3px solid #ff4500;
-    border-radius: 20px;
-    padding: 15px 30px;
-    color: white;
-    font-family: 'Overpass', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.3),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    margin: 10px;
-    position: relative;
-    z-index: 1;
-    
-    /* Button highlight */
-    &::before {
-        content: '';
-        position: absolute;
-        top: 3px;
-        left: 6px;
-        right: 6px;
-        height: 40%;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
-        opacity: 0.8;
-    }
-    
-    &:hover {
-        transform: translateY(-3px);
-        background: linear-gradient(145deg, #ff6b2b, #ff5801);
-        box-shadow: 
-            0 6px 12px rgba(0, 0, 0, 0.4),
-            inset 0 3px 6px rgba(255, 255, 255, 0.4);
-    }
-    
-    &:active {
-        transform: translateY(-1px);
-        box-shadow: 
-            0 3px 6px rgba(0, 0, 0, 0.3),
-            inset 0 2px 4px rgba(255, 255, 255, 0.2);
-    }
 `
 
 const FullscreenBackdrop = () => {
@@ -134,33 +85,13 @@ const FullscreenBackdrop = () => {
         };
     }, []);
 
-    const handleFullscreen = () => {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) {
-            document.documentElement.msRequestFullscreen();
-        }
-    };
-
-    const handleDismiss = () => {
-        setShowBackdrop(false);
-    };
-
     return (
         <BackdropContainer $show={showBackdrop}>
             <MessageContainer>
-                <MessageTitle>Screen Too Small</MessageTitle>
+                <MessageTitle>Please Open Fullscreen Mode</MessageTitle>
                 <MessageText>
                     For the best Reddit TCG Shop experience, please open this page in fullscreen mode or use a larger screen.
                 </MessageText>
-                <FullscreenButton onClick={handleFullscreen}>
-                    Open Fullscreen
-                </FullscreenButton>
-                <FullscreenButton onClick={handleDismiss}>
-                    Continue Anyway
-                </FullscreenButton>
             </MessageContainer>
         </BackdropContainer>
     );
