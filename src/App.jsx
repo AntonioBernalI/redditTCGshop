@@ -34,7 +34,9 @@ function App() {
       if (!message) return;
 
       const { type, data } = message;
-      setMoney(data);
+      if (message.type==="balance_update"){
+        setMoney(data);
+      }
     };
 
     window.addEventListener('message', handleMessage);
