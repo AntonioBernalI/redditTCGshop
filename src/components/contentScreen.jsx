@@ -850,8 +850,11 @@ const ContentScreen = ({ activeItem }) => {
         const price = cardData[cardId].price;
         const cardPrice = parseFloat(cardData[cardId].price.replace('$', ''));
         
+        // Generate cardSlug: lowercase name with spaces removed
+        const cardSlug = cardName.toLowerCase().replace(/\s+/g, '');
+        
         if (money >= cardPrice) {
-            DevvitMessenger.sendPurchase(cardId, cardPrice);
+            DevvitMessenger.sendPurchase(cardSlug, cardPrice);
             setToast(`${cardName} purchased`);
             setShowToast(true);
             setSelectedCard(null);
