@@ -12,10 +12,28 @@ function App() {
   const [money, setMoney] = useState(1250);
 
   useEffect(() => {
-    const messageHandler = (e) => {
-      const content = event.data.data.message.data
-      // the content will will be an int
+    const messageHandler = (event) => {
+      // Check if the event has the expected structure
+      if (event.data && event.data.data && event.data.data.message && event.data.data.message.data !== undefined) {
+        const content = event.data.data.message.data;
+        
+        // If the content is a number (karma/money value), update the state
+        if (typeof content === 'number') {
+          setMoney(content);
+          console.log("Received money update:", content);
+        } else {
+          console.log("Received message from Devvit:", content);
+        }
+      }
     }
+    
+    // Add event listener for messages from Devvit
+    window.addEventListener('message', messageHandler);
+    
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener('message', messageHandler);
+    };
   }, []);
 
   const handleNavItemClick = (itemName) => {
