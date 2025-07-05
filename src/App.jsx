@@ -13,7 +13,15 @@ function deepFindMessage(obj) {
 
   if ('data' in obj) return deepFindMessage(obj.data);
 
+  return undefined;function deepFindMessage(obj) {
+  if (!obj || typeof obj !== 'object') return undefined;
+  if ('message' in obj) return obj.message;
+
+  if ('data' in obj) return deepFindMessage(obj.data);
+
   return undefined;
+}
+
 }
 
 function App() {
