@@ -11,8 +11,8 @@ import { styled } from 'styled-components';
 
 const MoneyDiv = styled.div`
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 5%;
+  left: 5%;
   width: 200px;
   height: 100px;
   background-color: rebeccapurple;
