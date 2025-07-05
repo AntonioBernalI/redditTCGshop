@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import DevvitMessenger from './utils/DevvitMessenger'
 import MainDiv from "./components/mainDiv.jsx";
 import Snoo from "./components/snoo.jsx";
 import HeaderImage from "./components/headerImage.jsx";
@@ -12,10 +13,25 @@ function App() {
   const [money, setMoney] = useState(1250);
 
   useEffect(() => {
-    const messageHandler = (e) => {
-      const content = event.data.data.message.data
-      // the content will will be an int
+    const messageHandler = (event) => {
+      // Check if the message contains data we're interested in
+      if (event.data && event.data.data && event.data.data.message) {
+        const content = event.data.data.message.data;
+        
+        // If the content is a number (karma/money amount)
+        if (typeof content === 'number') {
+          setMoney(content);
+        }
+      }
     }
+    
+    // Add event listener for messages from Devvit
+    window.addEventListener('message', messageHandler);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener('message', messageHandler);
+    };
   }, []);
 
   const handleNavItemClick = (itemName) => {
