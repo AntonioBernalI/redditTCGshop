@@ -847,20 +847,27 @@ const ContentScreen = ({ activeItem }) => {
     
     const handlePurchase = (cardId) => {
         const cardName = cardData[cardId].name;
+        const price = cardData[cardId].price;
         const cardPrice = parseFloat(cardData[cardId].price.replace('$', ''));
         
-        // Send purchase info to Devvit
-        DevvitMessenger.sendPurchase(cardId, cardPrice);
-        
-        setToast(`${cardName} purchased`);
-        setShowToast(true);
-        setSelectedCard(null);
-        
-        // Hide toast after 3 seconds
-        setTimeout(() => {
-            setShowToast(false);
-            setTimeout(() => setToast(''), 300); // Clear text after animation
-        }, 3000);
+        if (money >= cardPrice) {
+            DevvitMessenger.sendPurchase(cardId, cardPrice);
+            setToast(`${cardName} purchased`);
+            setShowToast(true);
+            setSelectedCard(null);
+            
+            setTimeout(() => {
+                setShowToast(false);
+                setTimeout(() => setToast(''), 300);
+            }, 3000);
+        } else {
+            setToast("Insufficient funds");
+            setShowToast(true);
+            setTimeout(() => {
+                setShowToast(false);
+                setTimeout(() => setToast(''), 300);
+            }, 3000);
+        }
     };
 
     if (!activeItem) {
