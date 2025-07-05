@@ -92,7 +92,7 @@ const MoneyLogo = styled.div`
 `
 
 const MoneyAmount = styled.div`
-    color: #228b22;
+    color: #8b4513;
     font-family: 'Overpass', sans-serif;
     font-size: 28px;
     font-weight: bold;
