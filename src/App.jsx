@@ -13,20 +13,12 @@ function deepFindMessage(obj) {
 
   if ('data' in obj) return deepFindMessage(obj.data);
 
-  return undefined;function deepFindMessage(obj) {
-  if (!obj || typeof obj !== 'object') return undefined;
-  if ('message' in obj) return obj.message;
-
-  if ('data' in obj) return deepFindMessage(obj.data);
-
   return undefined;
-}
-
 }
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
-  const [money, setMoney] = useState(1250);
+  const [money, setMoney] = useState("---");
 
   useEffect(() => {
     const handleMessage = (event) => {
