@@ -22,6 +22,12 @@ function App() {
   const [money, setMoney] = useState("loading...");
 
   useEffect(() => {
+    // Send webview_ready message after mount
+    window.parent.postMessage({
+      type: 'webview_ready',
+      data: {}
+    }, '*');
+    
     const handleMessage = (event) => {
       if (event.origin !== 'https://www.reddit.com') return;
 
