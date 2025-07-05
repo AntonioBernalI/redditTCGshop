@@ -105,6 +105,7 @@ const MoneyAmount = styled.div`
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
     z-index: 1;
     flex: 1;
+    text-align: center;
     
     @media (max-width: 799px) {
         font-size: 22px;
