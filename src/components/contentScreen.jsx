@@ -798,7 +798,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
         'ghostsnoo': {
             name: 'Ghost Snoo',
             image: ghostsnooCard,
-            price: '$5.99',
+            price: '300',
             description: 'A mysterious spectral version of Reddit\'s beloved mascot. This ghostly Snoo haunts the digital realm with ethereal powers, striking with supernatural precision despite its fragile form.',
             stats: {
                 'Attack': '160',
@@ -809,7 +809,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
         'spez': {
             name: 'Spez',
             image: spezCard,
-            price: '$3.99',
+            price: '300',
             description: 'The legendary CEO and co-founder of Reddit himself! Steve "Spez" Huffman brings balanced leadership to the battlefield with steady damage and reliable health stats.',
             stats: {
                 'Damage': '70',
@@ -820,19 +820,19 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
         'bloodyprize': {
             name: 'Bloody Prize',
             image: bloodyprizeCard,
-            price: '$5.49',
+            price: '400',
             description: 'A dark and mysterious reward earned through intense Reddit battles. This blood-stained trophy represents the ultimate sacrifice and victory in the most brutal of online conflicts.'
         },
         'everything': {
             name: 'Everything',
             image: everythingCard,
-            price: '$1.99',
+            price: '1000',
             description: 'The ultimate Reddit experience condensed into a single card. This represents the collective knowledge, memes, discussions, and chaos that encompasses everything Reddit has to offer.'
         },
         'pack': {
             name: 'Pack',
             image: sobreCard,
-            price: '$9.99',
+            price: '500',
             description: 'A premium booster pack containing 5 random cards from the Reddit TCG collection. Each pack guarantees at least one rare card and offers the chance to discover powerful legendary cards for your deck.'
         }
     };
@@ -848,7 +848,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
     const handlePurchase = (cardId) => {
         const cardName = cardData[cardId].name;
         const price = cardData[cardId].price;
-        const cardPrice = parseFloat(cardData[cardId].price.replace('$', ''));
+        const cardPrice = parseFloat(cardData[cardId].price);
         
         // Generate cardSlug: lowercase name with spaces removed
         const cardSlug = cardName.toLowerCase().replace(/\s+/g, '');
@@ -908,7 +908,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
                         <CardSlotsContainer>
                             <CardSlot onClick={() => handleCardClick('ghostsnoo')}>
                                 <PriceTag>
-                                    <span>$5.99</span>
+                                    <span>300</span>
                                 </PriceTag>
                                 <CardContent>
                                     <CardImage>
@@ -928,7 +928,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
                             </CardSlot>
                             <CardSlot onClick={() => handleCardClick('spez')}>
                                 <PriceTag>
-                                    <span>$3.99</span>
+                                    <span>300</span>
                                 </PriceTag>
                                 <CardContent>
                                     <CardImage>
@@ -1013,7 +1013,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
                         }}>
                             <CardSlot onClick={() => handleCardClick('bloodyprize')}>
                                 <PriceTag>
-                                    <span>$5.49</span>
+                                    <span>400</span>
                                 </PriceTag>
                                 <CardContent>
                                     <CardImage>
@@ -1034,7 +1034,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
                             </CardSlot>
                             <CardSlot onClick={() => handleCardClick('everything')}>
                                 <PriceTag>
-                                    <span>$1.99</span>
+                                    <span>1000</span>
                                 </PriceTag>
                                 <CardContent>
                                     <CardImage>
@@ -1119,7 +1119,7 @@ const ContentScreen = ({ activeItem, money, updateMoney }) => {
                         }}>
                             <CardSlot onClick={() => handleCardClick('pack')}>
                                 <PriceTag>
-                                    <span>$9.99</span>
+                                    <span>500</span>
                                 </PriceTag>
                                 <CardContent>
                                     <CardImage>
