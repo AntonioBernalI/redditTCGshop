@@ -12,7 +12,9 @@ function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
 
   useEffect(() => {
-    console.log("Hello world");
+    const messageHandler = (e) => {
+      // the data will l
+    }
   }, []);
 
   const handleNavItemClick = (itemName) => {
