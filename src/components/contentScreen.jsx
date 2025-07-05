@@ -6,7 +6,6 @@ import ghostsnooCard from '../assets/ghostsnoo.png'
 import bloodyprizeCard from '../assets/bloodyprize.png'
 import everythingCard from '../assets/everything.png'
 import sobreCard from '../assets/sobre.png'
-import DevvitMessenger from '../utils/DevvitMessenger'
 
 const ToastNotification = styled.div`
     position: fixed;
@@ -847,41 +846,7 @@ const ContentScreen = ({ activeItem }) => {
     
     const handlePurchase = (cardId) => {
         const cardName = cardData[cardId].name;
-        const cardPrice = parseFloat(cardData[cardId].price.replace('$', ''));
-        
-        // Check if user has enough money
-        if (money >= cardPrice) {
-            // Send purchase info to Devvit
-            DevvitMessenger.sendPurchase(cardId, cardPrice);
-            
-            // Show toast notification
-            setToast(`${cardName} purchased`);
-            setShowToast(true);
-            setSelectedCard(null);
-            
-            // Hide toast after 3 seconds
-            setTimeout(() => {
-                setShowToast(false);
-                setTimeout(() => setToast(''), 300); // Clear text after animation
-            }, 3000);
-        } else {
-            // Show insufficient funds message
-            setToast("Insufficient funds");
-            setShowToast(true);
-            
-            setTimeout(() => {
-                setShowToast(false);
-                setTimeout(() => setToast(''), 300);
-            }, 3000);
-        }
-    };
-    
-    const handleOpenPack = () => {
-        // Send open pack message to Devvit
-        DevvitMessenger.sendOpenPack();
-        
-        // Show toast notification
-        setToast(`Pack opened`);
+        setToast(`${cardName} purchased`);
         setShowToast(true);
         setSelectedCard(null);
         
@@ -989,11 +954,7 @@ const ContentScreen = ({ activeItem }) => {
                                         ))}
                                     </div>
                                 )}
-                                {selectedCard === 'pack' ? (
-                                    <ModalBuyButton onClick={handleOpenPack}>Open Pack</ModalBuyButton>
-                                ) : (
-                                    <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
-                                )}
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
@@ -1105,11 +1066,7 @@ const ContentScreen = ({ activeItem }) => {
                                         ))}
                                     </div>
                                 )}
-                                {selectedCard === 'pack' ? (
-                                    <ModalBuyButton onClick={handleOpenPack}>Open Pack</ModalBuyButton>
-                                ) : (
-                                    <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
-                                )}
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
@@ -1151,7 +1108,7 @@ const ContentScreen = ({ activeItem }) => {
                                         />
                                     </CardImage>
                                 </CardContent>
-                                <BuyButton onClick={() => handleCardClick('pack')}>Buy Now</BuyButton>
+                                <BuyButton>Buy Now</BuyButton>
                             </CardSlot>
                         </CardSlotsContainer>
                     </InnerContainer>
@@ -1193,11 +1150,7 @@ const ContentScreen = ({ activeItem }) => {
                                         ))}
                                     </div>
                                 )}
-                                {selectedCard === 'pack' ? (
-                                    <ModalBuyButton onClick={handleOpenPack}>Open Pack</ModalBuyButton>
-                                ) : (
-                                    <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
-                                )}
+                                <ModalBuyButton onClick={() => handlePurchase(selectedCard)}>Purchase Card</ModalBuyButton>
                             </ModalCardDetails>
                         </ModalContent>
                     </ModalBackdrop>
