@@ -789,7 +789,7 @@ const BuyButton = styled.button`
     }
 `
 
-const ContentScreen = ({ activeItem }) => {
+const ContentScreen = ({ activeItem, money }) => {
     const [selectedCard, setSelectedCard] = useState(null);
     const [toast, setToast] = useState('');
     const [showToast, setShowToast] = useState(false);
@@ -853,12 +853,20 @@ const ContentScreen = ({ activeItem }) => {
         // Generate cardSlug: lowercase name with spaces removed
         const cardSlug = cardName.toLowerCase().replace(/\s+/g, '');
         
-        if (money >= cardPrice) {
+        // Check if money is a number and sufficient for purchase
+        if (typeof money === 'number' && money >= cardPrice) {
             DevvitMessenger.sendPurchase(cardSlug, cardPrice);
             setToast(`${cardName} purchased`);
             setShowToast(true);
             setSelectedCard(null);
             
+            setTimeout(() => {
+                setShowToast(false);
+                setTimeout(() => setToast(''), 300);
+            }, 3000);
+        } else if (typeof money !== 'number') {
+            setToast("Please wait, loading balance...");
+            setShowToast(true);
             setTimeout(() => {
                 setShowToast(false);
                 setTimeout(() => setToast(''), 300);

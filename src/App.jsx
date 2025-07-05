@@ -53,7 +53,7 @@ function App() {
             activeItem={activeNavItem} 
             onItemClick={handleNavItemClick}
           />
-          <ContentScreen activeItem={activeNavItem} />
+          <ContentScreen activeItem={activeNavItem} money={money} />
       </MainDiv>
         <Snoo/>
     </>
