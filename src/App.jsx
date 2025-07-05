@@ -18,7 +18,7 @@ function deepFindMessage(obj) {
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
-  const [money, setMoney] = useState(1450);
+  const [money, setMoney] = useState("loading...");
 
   useEffect(() => {
     const handleMessage = (event) => {
