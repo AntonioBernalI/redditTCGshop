@@ -7,18 +7,17 @@ const MoneyDiv = styled.div`
     left: 2%;
     width: 220px;
     height: 80px;
-    background: linear-gradient(145deg, #ffd700, #ffb300);
-    border: 4px solid #ff8c00;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     z-index: 20;
     display: flex;
     align-items: center;
     padding: 8px 15px;
     box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.4),
-        inset 0 3px 6px rgba(255, 255, 255, 0.3);
+        0 6px 12px rgba(0, 0, 0, 0.2);
     
-    /* Cartoon highlight */
+    /* Transparent highlight */
     &::before {
         content: '';
         position: absolute;
@@ -26,9 +25,9 @@ const MoneyDiv = styled.div`
         left: 12px;
         right: 12px;
         height: 35%;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 18px;
-        opacity: 0.8;
+        opacity: 0.5;
     }
     
     @media (max-width: 799px) {
