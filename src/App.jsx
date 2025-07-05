@@ -28,14 +28,10 @@ function App() {
       data: {}
     }, '*');
     
-    const handleMessage = (event) => { 
+    const handleMessage = (event) => {
       const message = deepFindMessage(event.data);
-      const { type, data } = message;
       if (!message) return;
-      window.parent.postMessage({
-        type: 'i received this',
-        data: data
-      }, '*');
+      const { type, data } = message;
       if (type==="balance_update"){
         setMoney(data);
       }
