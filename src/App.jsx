@@ -44,6 +44,9 @@ function App() {
     setActiveNavItem(itemName);
   };
 
+  const updateMoney = (newAmount) => {
+    setMoney(newAmount);
+  };
   return (
     <>
       <MoneyDisplay money={money} />
@@ -53,7 +56,7 @@ function App() {
             activeItem={activeNavItem} 
             onItemClick={handleNavItemClick}
           />
-          <ContentScreen activeItem={activeNavItem} money={money} />
+          <ContentScreen activeItem={activeNavItem} money={money} updateMoney={updateMoney} />
       </MainDiv>
         <Snoo/>
     </>

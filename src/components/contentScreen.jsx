@@ -789,7 +789,7 @@ const BuyButton = styled.button`
     }
 `
 
-const ContentScreen = ({ activeItem, money }) => {
+const ContentScreen = ({ activeItem, money, updateMoney }) => {
     const [selectedCard, setSelectedCard] = useState(null);
     const [toast, setToast] = useState('');
     const [showToast, setShowToast] = useState(false);
@@ -855,6 +855,9 @@ const ContentScreen = ({ activeItem, money }) => {
         
         // Check if money is a number and sufficient for purchase
         if (typeof money === 'number' && money >= cardPrice) {
+            // Update money locally by subtracting the purchase price
+            updateMoney(money - cardPrice);
+            
             DevvitMessenger.sendPurchase(cardSlug, cardPrice);
             setToast(`${cardName} purchased`);
             setShowToast(true);
