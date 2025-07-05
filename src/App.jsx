@@ -16,6 +16,7 @@ const MoneyDiv = styled.div`
   width: 200px;
   height: 100px;
   background-color: rebeccapurple;
+  z-index: 20;
 `
 
 function App() {
