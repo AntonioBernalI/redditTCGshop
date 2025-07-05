@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import karmaImage from '../assets/Karma.png';
 
 const MoneyDiv = styled.div`
     position: absolute;
@@ -69,11 +70,13 @@ const MoneyLogo = styled.div`
     }
     
     span {
-        color: white;
-        font-family: 'Overpass', sans-serif;
-        font-size: 24px;
-        font-weight: bold;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        display: none; /* Hide the span when using image */
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         z-index: 1;
     }
     
@@ -82,8 +85,9 @@ const MoneyLogo = styled.div`
         height: 40px;
         margin-right: 10px;
         
-        span {
-            font-size: 20px;
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 `
@@ -107,7 +111,7 @@ const MoneyDisplay = ({ money }) => {
     return (
         <MoneyDiv>
             <MoneyLogo>
-                <span>$</span>
+                <img src={karmaImage} alt="Karma" />
             </MoneyLogo>
             <MoneyAmount>{money.toLocaleString()}</MoneyAmount>
         </MoneyDiv>
