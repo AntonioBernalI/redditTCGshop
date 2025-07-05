@@ -795,7 +795,7 @@ const ContentScreen = ({ activeItem }) => {
     const [showToast, setShowToast] = useState(false);
     
     const cardData = {
-        'snoo-champion': {
+        'ghostsnoo': {
             name: 'Ghost Snoo',
             image: ghostsnooCard,
             price: '$5.99',
@@ -806,7 +806,7 @@ const ContentScreen = ({ activeItem }) => {
                 'Rarity': '★ Rare'
             }
         },
-        'upvote-storm': {
+        'spez': {
             name: 'Spez',
             image: spezCard,
             price: '$3.99',
@@ -817,13 +817,13 @@ const ContentScreen = ({ activeItem }) => {
                 'Rarity': '★ Rare'
             }
         },
-        'mod-power': {
+        'bloodyprize': {
             name: 'Bloody Prize',
             image: bloodyprizeCard,
             price: '$5.49',
             description: 'A dark and mysterious reward earned through intense Reddit battles. This blood-stained trophy represents the ultimate sacrifice and victory in the most brutal of online conflicts.'
         },
-        'lurker': {
+        'everything': {
             name: 'Everything',
             image: everythingCard,
             price: '$1.99',
@@ -895,7 +895,7 @@ const ContentScreen = ({ activeItem }) => {
                 <FeaturedContent>
                     <InnerContainer>
                         <CardSlotsContainer>
-                            <CardSlot onClick={() => handleCardClick('snoo-champion')}>
+                            <CardSlot onClick={() => handleCardClick('ghostsnoo')}>
                                 <PriceTag>
                                     <span>$5.99</span>
                                 </PriceTag>
@@ -915,7 +915,7 @@ const ContentScreen = ({ activeItem }) => {
                                 </CardContent>
                                 <BuyButton>Buy Now</BuyButton>
                             </CardSlot>
-                            <CardSlot onClick={() => handleCardClick('upvote-storm')}>
+                            <CardSlot onClick={() => handleCardClick('spez')}>
                                 <PriceTag>
                                     <span>$3.99</span>
                                 </PriceTag>
@@ -1000,7 +1000,7 @@ const ContentScreen = ({ activeItem }) => {
                                 gap: '25px'
                             } : {})
                         }}>
-                            <CardSlot onClick={() => handleCardClick('mod-power')}>
+                            <CardSlot onClick={() => handleCardClick('bloodyprize')}>
                                 <PriceTag>
                                     <span>$5.49</span>
                                 </PriceTag>
@@ -1021,7 +1021,7 @@ const ContentScreen = ({ activeItem }) => {
                                 </CardContent>
                                 <BuyButton>Buy Now</BuyButton>
                             </CardSlot>
-                            <CardSlot onClick={() => handleCardClick('lurker')}>
+                            <CardSlot onClick={() => handleCardClick('everything')}>
                                 <PriceTag>
                                     <span>$1.99</span>
                                 </PriceTag>
@@ -1060,7 +1060,7 @@ const ContentScreen = ({ activeItem }) => {
                                             height: '100%',
                                             objectFit: 'contain',
                                             borderRadius: '16px',
-                                            ...(selectedCard === 'mod-power' || selectedCard === 'lurker' ? { transform: 'rotate(90deg)' } : {})
+                                            ...(selectedCard === 'bloodyprize' || selectedCard === 'everything' ? { transform: 'rotate(90deg)' } : {})
                                         }}
                                     />
                                 ) : (
@@ -1144,7 +1144,7 @@ const ContentScreen = ({ activeItem }) => {
                                             height: '100%',
                                             objectFit: 'contain',
                                             borderRadius: '16px',
-                                            ...(selectedCard === 'mod-power' || selectedCard === 'lurker' ? { transform: 'rotate(90deg)' } : {})
+                                            ...(selectedCard === 'bloodyprize' || selectedCard === 'everything' ? { transform: 'rotate(90deg)' } : {})
                                         }}
                                     />
                                 ) : (
