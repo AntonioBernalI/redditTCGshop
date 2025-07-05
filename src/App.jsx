@@ -28,17 +28,13 @@ function App() {
       data: {}
     }, '*');
     
-    const handleMessage = (event) => {
-      if (event.origin !== 'https://www.reddit.com') return;
+    const handleMessage = (event)setMoney(data); => {
 
       const message = deepFindMessage(event.data);
       if (!message) return;
 
       const { type, data } = message;
-
-      if (type === 'balance_update' && typeof data === 'number') {
-        setMoney(data);
-      }
+      setMoney(data);
     };
 
     window.addEventListener('message', handleMessage);
