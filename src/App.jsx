@@ -13,7 +13,8 @@ function App() {
 
   useEffect(() => {
     const messageHandler = (e) => {
-      // the data will l
+      const content = event.data.data.message.data
+      // the content will will be an int
     }
   }, []);
 
