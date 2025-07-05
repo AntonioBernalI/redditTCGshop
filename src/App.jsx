@@ -28,7 +28,7 @@ function App() {
       data: {}
     }, '*');
     
-    const handleMessage = (event)setMoney(data); => {
+    const handleMessage = (event) => {
 
       const message = deepFindMessage(event.data);
       if (!message) return;
