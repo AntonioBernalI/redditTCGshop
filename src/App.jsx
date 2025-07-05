@@ -13,22 +13,35 @@ function App() {
 
   useEffect(() => {
     const messageHandler = (event) => {
-      // Check if the event has the expected structure
-      if (event.data && event.data.data && event.data.data.message && event.data.data.message.data !== undefined) {
-        const content = event.data.data.message.data;
+      console.log("Message received:", event.data);
+      
+      // Check for Devvit's message structure
+      if (event.data && event.data.type === 'devvit-message') {
+        // Extract the message from the Devvit wrapper
+        const { message } = event.data.data || {};
         
-        // If the content is a number (karma/money value), update the state
-        if (typeof content === 'number') {
-          setMoney(content);
-          console.log("Received money update:", content);
-        } else {
-          console.log("Received message from Devvit:", content);
+        if (message) {
+          console.log("Parsed Devvit message:", message);
+          
+          // Handle different message types
+          if (message.type === 'balance_update' && typeof message.data === 'number') {
+            setMoney(message.data);
+            console.log("Updated balance to:", message.data);
+          } else {
+            console.log("Unhandled message type:", message.type);
+          }
         }
       }
     }
     
     // Add event listener for messages from Devvit
     window.addEventListener('message', messageHandler);
+    
+    // Send ready message to Devvit
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'webview_ready' }, '*');
+      console.log("Sent ready message to Devvit");
+    }
     
     // Clean up the event listener when component unmounts
     return () => {

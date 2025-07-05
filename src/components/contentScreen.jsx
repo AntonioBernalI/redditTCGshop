@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import DevvitMessenger from '../utils/DevvitMessenger'
 import spezCard from '../assets/spez.png'
 import ghostsnooCard from '../assets/ghostsnoo.png'
 import bloodyprizeCard from '../assets/bloodyprize.png'
@@ -797,7 +798,7 @@ const ContentScreen = ({ activeItem }) => {
         'snoo-champion': {
             name: 'Ghost Snoo',
             image: ghostsnooCard,
-            price: '$4.99',
+            price: '$5.99',
             description: 'A mysterious spectral version of Reddit\'s beloved mascot. This ghostly Snoo haunts the digital realm with ethereal powers, striking with supernatural precision despite its fragile form.',
             stats: {
                 'Attack': '160',
@@ -808,7 +809,7 @@ const ContentScreen = ({ activeItem }) => {
         'upvote-storm': {
             name: 'Spez',
             image: spezCard,
-            price: '$6.99',
+            price: '$3.99',
             description: 'The legendary CEO and co-founder of Reddit himself! Steve "Spez" Huffman brings balanced leadership to the battlefield with steady damage and reliable health stats.',
             stats: {
                 'Damage': '70',
@@ -846,6 +847,11 @@ const ContentScreen = ({ activeItem }) => {
     
     const handlePurchase = (cardId) => {
         const cardName = cardData[cardId].name;
+        const cardPrice = parseFloat(cardData[cardId].price.replace('$', ''));
+        
+        // Send purchase info to Devvit
+        DevvitMessenger.sendPurchase(cardId, cardPrice);
+        
         setToast(`${cardName} purchased`);
         setShowToast(true);
         setSelectedCard(null);
