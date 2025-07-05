@@ -7,6 +7,16 @@ import Snoo from "./components/snoo.jsx";
 import HeaderImage from "./components/headerImage.jsx";
 import NavBar from "./components/navBar.jsx";
 import ContentScreen from "./components/contentScreen.jsx";
+import { styled } from 'styled-components';
+
+const MoneyDiv = styled.div`
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 200px;
+  height: 100px;
+  background-color: rebeccapurple;
+`
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
@@ -23,6 +33,7 @@ function App() {
 
   return (
     <>
+      <MoneyDiv />
       <MainDiv>
           <HeaderImage />
           <NavBar 
