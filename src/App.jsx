@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import MainDiv from "./components/mainDiv.jsx";
@@ -9,6 +10,10 @@ import ContentScreen from "./components/contentScreen.jsx";
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
+
+  useEffect(() => {
+    console.log("Hello world");
+  }, []);
 
   const handleNavItemClick = (itemName) => {
     setActiveNavItem(itemName);
