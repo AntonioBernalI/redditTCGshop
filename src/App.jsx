@@ -6,6 +6,7 @@ import HeaderImage from "./components/headerImage.jsx";
 import NavBar from "./components/navBar.jsx";
 import ContentScreen from "./components/contentScreen.jsx";
 import MoneyDisplay from "./components/moneyDiv.jsx";
+import FullscreenBackdrop from "./components/FullscreenBackdrop.jsx";
 
 function deepFindMessage(obj) {
   if (!obj || typeof obj !== 'object') return undefined;
@@ -49,6 +50,7 @@ function App() {
   };
   return (
     <>
+      <FullscreenBackdrop />
       <MoneyDisplay money={money} />
       <MainDiv>
           <HeaderImage />
