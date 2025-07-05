@@ -6,6 +6,17 @@ import HeaderImage from "./components/headerImage.jsx";
 import NavBar from "./components/navBar.jsx";
 import ContentScreen from "./components/contentScreen.jsx";
 import MoneyDisplay from "./components/moneyDiv.jsx";
+
+function deepFindMessage(obj) {
+  if (!obj || typeof obj !== 'object') return undefined;
+  if ('message' in obj) return obj.message;
+
+  // Busca recursivamente en cada propiedad llamada "data"
+  if ('data' in obj) return deepFindMessage(obj.data);
+
+  return undefined;
+}
+
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
   const [money, setMoney] = useState(1250);
@@ -14,7 +25,7 @@ function App() {
     const handleMessage = (event) => {
       if (event.origin !== 'https://www.reddit.com') return;
 
-      const { data: { message } = {} } = event.data ?? {};
+      const message = deepFindMessage(event.data);
       if (!message) return;
 
       const { type, data } = message;
