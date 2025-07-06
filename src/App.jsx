@@ -20,6 +20,7 @@ function deepFindMessage(obj) {
 function App() {
   const [activeNavItem, setActiveNavItem] = useState(null);
   const [money, setMoney] = useState("loading...");
+  const [userCards, setUserCards] = useState("loading...");
 
   useEffect(() => {
     // Send webview_ready message after mount
@@ -36,6 +37,8 @@ function App() {
       const { type, data } = message;
       if (type === "balance_update") {
         setMoney(data);
+      } else if (type === "cards_update") {
+        setUserCards(data);
       }
     };
 
@@ -52,6 +55,11 @@ function App() {
   const updateMoney = (newAmount) => {
     setMoney(newAmount);
   };
+
+  const updateUserCards = (newCards) => {
+    setUserCards(newCards);
+  };
+
   return (
     <>
       <FullscreenBackdrop />
@@ -63,6 +71,8 @@ function App() {
           activeItem={activeNavItem}
           money={money}
           updateMoney={updateMoney}
+          userCards={userCards}
+          updateUserCards={updateUserCards}
         />
       </MainDiv>
       <Snoo />
